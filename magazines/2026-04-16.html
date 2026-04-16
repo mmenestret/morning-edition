@@ -221,15 +221,258 @@
       .story-footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
     }
 
+    /* ── Section Headers ── */
+    .section-header {
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .section-header-inner { max-width: 800px; }
+    .section-kicker {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.9rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    /* ── Daily Panels ── */
+    .daily-panels {
+      padding: clamp(2rem, 5vw, 6rem);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .panel {
+      margin-bottom: 4rem;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(128,128,128,0.2);
+    }
+    .panel-icon {
+      font-size: 1.5rem;
+    }
+    .panel-label {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .panel-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      padding: 0.2em 0.6em;
+      border-radius: 3px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .tag-pro { background: #1e3a5f; color: #7dd3fc; }
+    .tag-perso { background: #3b1f3b; color: #f0abfc; }
+
+    .event-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: start;
+    }
+    .event-time {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      font-weight: 700;
+      opacity: 0.8;
+    }
+    .event-title {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .event-meta {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+      opacity: 0.5;
+    }
+    .event-note {
+      font-family: var(--ff-body);
+      font-size: clamp(0.8rem, 1vw, 0.95rem);
+      opacity: 0.6;
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    .email-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .email-from {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .email-subject {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .email-waiting {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+      white-space: nowrap;
+    }
+
+    .todo-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .todo-priority {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15em 0.5em;
+      border-radius: 3px;
+    }
+    .prio-p1 { background: #dc2626; color: #fff; }
+    .prio-p2 { background: #f59e0b; color: #000; }
+    .prio-p3 { background: #6b7280; color: #fff; }
+    .todo-content {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+    .todo-due {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    .empty-panel {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      opacity: 0.4;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+
+    /* ── Collisions ── */
+    .collisions {
+      background: #450a0a;
+      color: #fca5a5;
+      padding: clamp(2rem, 4vw, 4rem);
+    }
+    .collisions-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .collisions-header {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fecaca;
+      margin-bottom: 1.5rem;
+    }
+    .collision-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(252,165,165,0.15);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+    }
+    .collision-time {
+      font-family: var(--ff-mono);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    }
+    .collision-detail {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+
   </style>
 </head>
 <body>
   <header class="cover">
     <div class="cover-kicker">Morning Edition</div>
-    <h1 class="cover-title">Hacker<br>News</h1>
+    <h1 class="cover-title">Ma<br>Journée</h1>
     <div class="cover-date">jeudi 16 avril 2026</div>
-    <div class="cover-subtitle">10 stories curated for mmenestret</div>
+    <div class="cover-subtitle">Daily brief + 10 stories curated for mmenestret</div>
   </header>
+
+<section class="daily-panels">
+<div class="panel">
+  <div class="panel-header">    <span class="panel-icon">💼</span>    <span class="panel-label">Journée Pro</span>    <span class="panel-tag tag-pro">Actual Group</span>  </div>
+  <div class="event-row">
+    <div class="event-time">09:00–09:30</div>
+    <div>
+      <div class="event-title">Daily data</div>
+      <div class="event-meta">Aurélien Duguet, Jean Brice ARNAUD, Pauline Jouve</div>
+      <div class="event-note">Point quotidien sur l'avancement data</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">14:30–17:00</div>
+    <div>
+      <div class="event-title">Data x IA - Mise en place plateforme technique</div>
+      <div class="event-meta">Aurélien Duguet, Simon AUBERT</div>
+      <div class="event-note">Workshop technique plateforme data/IA</div>
+    </div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">📬</span>    <span class="panel-label">Mails en attente</span>  </div>
+  <div class="email-row">
+    <div class="email-from">Edouard Bardet</div>
+    <div class="email-subject">Projet Contrôle Trésorerie – Identification des flux XML</div>
+    <div class="email-waiting">2j</div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">🔥</span>    <span class="panel-label">Priorités</span>  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p1">P1</div>
+    <div class="todo-content">MEP PBOX — vérifier droits IAM migration</div>
+    <div class="todo-due">2026-04-17</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p2">P2</div>
+    <div class="todo-content">Finaliser schéma BigQuery contrôle trésorerie</div>
+    <div class="todo-due">2026-04-18</div>
+  </div>
+</div>
+</section>
+
+
+  <!-- Veille Section Header -->
+  <section class="section-header" style="background:#0a0a0a;color:#fff">
+    <div class="section-header-inner">
+      <div class="section-kicker">Veille</div>
+      <h2 class="section-title">Hacker News</h2>
+    </div>
+  </section>
 
 <section class="spread spread-hero" style="background:#0a0a0a;color:#ffffff">
   <div class="spread-inner">
@@ -238,11 +481,11 @@
       <div class="story-meta">
         <span class="domain">medium.com</span>
         <span class="dot">·</span>
-        <span class="score">26 pts</span>
+        <span class="score">30 pts</span>
         <span class="dot">·</span>
-        <span class="comments">6 comments</span>
+        <span class="comments">7 comments</span>
         <span class="dot">·</span>
-        <span class="ago">2h</span>
+        <span class="ago">4h</span>
       </div>
       <h2 class="story-title">
         <a href="https://medium.com/airbnb-engineering/building-a-high-volume-metrics-pipeline-with-opentelemetry-and-vmagent-c714d6910b45" target="_blank" rel="noopener" style="color:#ffffff">Moving a large-scale metrics pipeline from StatsD to OpenTelemetry / Prometheus</a>
@@ -262,9 +505,9 @@
       <div class="story-meta">
         <span class="domain">gizmoweek.com</span>
         <span class="dot">·</span>
-        <span class="score">279 pts</span>
+        <span class="score">281 pts</span>
         <span class="dot">·</span>
-        <span class="comments">169 comments</span>
+        <span class="comments">171 comments</span>
         <span class="dot">·</span>
         <span class="ago">1j</span>
       </div>
@@ -287,11 +530,11 @@
       <div class="story-meta">
         <span class="domain">letaigamble.com</span>
         <span class="dot">·</span>
-        <span class="score">9 pts</span>
+        <span class="score">11 pts</span>
         <span class="dot">·</span>
-        <span class="comments">6 comments</span>
+        <span class="comments">8 comments</span>
         <span class="dot">·</span>
-        <span class="ago">6h</span>
+        <span class="ago">7h</span>
       </div>
       <h2 class="story-title">
         <a href="https://letaigamble.com/" target="_blank" rel="noopener" style="color:#1c1917">Show HN: Gave Claude a casino bankroll – it gambles till it's too broke to think</a>
@@ -312,11 +555,11 @@
       <div class="story-meta">
         <span class="domain">blog.google</span>
         <span class="dot">·</span>
-        <span class="score">132 pts</span>
+        <span class="score">137 pts</span>
         <span class="dot">·</span>
-        <span class="comments">65 comments</span>
+        <span class="comments">71 comments</span>
         <span class="dot">·</span>
-        <span class="ago">14h</span>
+        <span class="ago">15h</span>
       </div>
       <h2 class="story-title">
         <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/" target="_blank" rel="noopener" style="color:#c9d1d9">The Gemini app is now on Mac</a>
@@ -335,22 +578,22 @@
     <div class="numeral numeral-dropcap">E</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">strix.ai</span>
+        <span class="domain">sleepingrobots.com</span>
         <span class="dot">·</span>
-        <span class="score">324 pts</span>
+        <span class="score">470 pts</span>
         <span class="dot">·</span>
-        <span class="comments">170 comments</span>
+        <span class="comments">122 comments</span>
         <span class="dot">·</span>
-        <span class="ago">15h</span>
+        <span class="ago">5h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" target="_blank" rel="noopener" style="color:#1a1a1a">Open Source Isn't Dead</a>
+        <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" target="_blank" rel="noopener" style="color:#1a1a1a">Stop Using Ollama</a>
       </h2>
-      <p class="story-description">AI has changed vulnerability discovery, but closing source code does not remove the attack surface. Continuous AI defense is the better response.</p>
+      <p class="story-description">Ollama gained traction by being the first easy llama.cpp wrapper, then spent years dodging attribution, misleading users, and pivoting to cloud, all while riding VC money earned on someone else</p>
       <div class="story-footer">
-        <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" class="read-link" style="color:#7c3aed" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47780712" class="hn-link" style="color:#7c3aed">Discussion HN</a>
-        <span class="by">by bearsyankees</span>
+        <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" class="read-link" style="color:#7c3aed" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47788385" class="hn-link" style="color:#7c3aed">Discussion HN</a>
+        <span class="by">by Zetaphor</span>
       </div>
     </div>
   </div>
@@ -360,22 +603,22 @@
     <div class="numeral numeral-bigstat">06<span class="stat-slash">/</span>10</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">sleepingrobots.com</span>
+        <span class="domain">strix.ai</span>
         <span class="dot">·</span>
-        <span class="score">243 pts</span>
+        <span class="score">325 pts</span>
         <span class="dot">·</span>
-        <span class="comments">52 comments</span>
+        <span class="comments">172 comments</span>
         <span class="dot">·</span>
-        <span class="ago">4h</span>
+        <span class="ago">17h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" target="_blank" rel="noopener" style="color:#fafafa">Stop Using Ollama</a>
+        <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" target="_blank" rel="noopener" style="color:#fafafa">Open Source Isn't Dead</a>
       </h2>
-      <p class="story-description">Ollama gained traction by being the first easy llama.cpp wrapper, then spent years dodging attribution, misleading users, and pivoting to cloud, all while riding VC money earned on someone else</p>
+      <p class="story-description">AI has changed vulnerability discovery, but closing source code does not remove the attack surface. Continuous AI defense is the better response.</p>
       <div class="story-footer">
-        <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" class="read-link" style="color:#22d3ee" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47788385" class="hn-link" style="color:#22d3ee">Discussion HN</a>
-        <span class="by">by Zetaphor</span>
+        <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" class="read-link" style="color:#22d3ee" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47780712" class="hn-link" style="color:#22d3ee">Discussion HN</a>
+        <span class="by">by bearsyankees</span>
       </div>
     </div>
   </div>
@@ -387,11 +630,11 @@
       <div class="story-meta">
         <span class="domain">tailscale.com</span>
         <span class="dot">·</span>
-        <span class="score">16 pts</span>
+        <span class="score">19 pts</span>
         <span class="dot">·</span>
         <span class="comments">1 comments</span>
         <span class="dot">·</span>
-        <span class="ago">5h</span>
+        <span class="ago">6h</span>
       </div>
       <h2 class="story-title">
         <a href="https://tailscale.com/blog/tailscale-rs-rust-tsnet-library-preview" target="_blank" rel="noopener" style="color:#292524">Tailscale-rs: Official Rust library for embedding Tailscale</a>
@@ -410,22 +653,22 @@
     <div class="numeral numeral-circle"><span>08</span></div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">zenodo.org</span>
+        <span class="domain">github.com</span>
         <span class="dot">·</span>
-        <span class="score">17 pts</span>
+        <span class="score">100 pts</span>
         <span class="dot">·</span>
-        <span class="comments">7 comments</span>
+        <span class="comments">35 comments</span>
         <span class="dot">·</span>
-        <span class="ago">7h</span>
+        <span class="ago">17h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://zenodo.org/records/19600206" target="_blank" rel="noopener" style="color:#14532d">The Universal Constraint Engine: Neuromorphic Computing Without Neural Networks</a>
+        <a href="https://github.com/saffron-health/libretto" target="_blank" rel="noopener" style="color:#14532d">Show HN: Libretto – Making AI browser automations deterministic</a>
       </h2>
-      <p class="story-description">We introduce the Universal Constraint Engine (UCE), a system for generating emergent multi-state architectures from declarative constraint rules over conserved quantities. Unlike conventional neural network architectures that rely on learned weights, gradient descent, and massive training corpora...</p>
+      <p class="story-description">The AI toolkit for building and maintaining browser automations - saffron-health/libretto</p>
       <div class="story-footer">
-        <a href="https://zenodo.org/records/19600206" class="read-link" style="color:#16a34a" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47786836" class="hn-link" style="color:#16a34a">Discussion HN</a>
-        <span class="by">by skinney_uce</span>
+        <a href="https://github.com/saffron-health/libretto" class="read-link" style="color:#16a34a" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47780971" class="hn-link" style="color:#16a34a">Discussion HN</a>
+        <span class="by">by muchael</span>
       </div>
     </div>
   </div>
@@ -435,22 +678,62 @@
     <div class="numeral numeral-neon">09</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">github.com</span>
+        <span class="domain">daedal.io</span>
         <span class="dot">·</span>
-        <span class="score">231 pts</span>
+        <span class="score">136 pts</span>
         <span class="dot">·</span>
-        <span class="comments">112 comments</span>
+        <span class="comments">71 comments</span>
         <span class="dot">·</span>
-        <span class="ago">10h</span>
+        <span class="ago">5h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://github.com/gastownhall/gastown/issues/3649" target="_blank" rel="noopener" style="color:#eee">Does Gas Town 'steal' usage from users' LLM credits to improve itself?</a>
+        <a href="https://daedal.io/@thomzane/116410863009847575" target="_blank" rel="noopener" style="color:#eee">FSF trying to contact Google about spammer sending 10k+ mails from Gmail account</a>
       </h2>
-      <p class="story-description">gastown-release.formula.toml and beads-release.formula.toml causes local Gas Town installation to review open Issues on github.com/steveyegge/gastown/actions, burning through usage on subscribed LL...</p>
+      <p class="story-description">width=device-width, initial-scale=1, viewport-fit=cover' name='viewport'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thom Zane: "Does anyone on the fediverse either work on the #…" - the daedal earth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content=</p>
       <div class="story-footer">
-        <a href="https://github.com/gastownhall/gastown/issues/3649" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47785053" class="hn-link" style="color:#ff6b6b">Discussion HN</a>
-        <span class="by">by rektomatic</span>
+        <a href="https://daedal.io/@thomzane/116410863009847575" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47788424" class="hn-link" style="color:#ff6b6b">Discussion HN</a>
+        <span class="by">by pabs3</span>
       </div>
     </div>
   </div>
@@ -460,22 +743,21 @@
     <div class="numeral numeral-roman">X</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">aalonso.dev</span>
+        <span class="domain">fingfx.thomsonreuters.com</span>
         <span class="dot">·</span>
-        <span class="score">128 pts</span>
+        <span class="score">135 pts</span>
         <span class="dot">·</span>
-        <span class="comments">69 comments</span>
+        <span class="comments">97 comments</span>
         <span class="dot">·</span>
-        <span class="ago">3j</span>
+        <span class="ago">19h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://aalonso.dev/blog/2023/how-to-fix-monitor-that-goes-black-off-due-to-static-electricity-in-chair/" target="_blank" rel="noopener" style="color:#2d2d2d">Fixing a monitor that goes black, off or blinks due to static electricity (2023)</a>
+        <a href="https://fingfx.thomsonreuters.com/gfx/legaldocs/xmvjyjekkpr/Rakoff%20-%20order%20-%20AI.pdf" target="_blank" rel="noopener" style="color:#2d2d2d">US v. Heppner (S.D.N.Y. 2026) no attorney-client privilege for AI chats [pdf]</a>
       </h2>
-      <p class="story-description">If you often get static electricity shocks when touching your laptop or your office chair, or your monitor goes black when you stand up, this may interest you.</p>
       <div class="story-footer">
-        <a href="https://aalonso.dev/blog/2023/how-to-fix-monitor-that-goes-black-off-due-to-static-electricity-in-chair/" class="read-link" style="color:#c0392b" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47738081" class="hn-link" style="color:#c0392b">Discussion HN</a>
-        <span class="by">by cyclopeanutopia</span>
+        <a href="https://fingfx.thomsonreuters.com/gfx/legaldocs/xmvjyjekkpr/Rakoff%20-%20order%20-%20AI.pdf" class="read-link" style="color:#c0392b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47778920" class="hn-link" style="color:#c0392b">Discussion HN</a>
+        <span class="by">by 1vuio0pswjnm7</span>
       </div>
     </div>
   </div>
@@ -483,7 +765,7 @@
 
   <footer class="colophon">
     <p>Morning Edition — curated daily by <a href="https://github.com/mmenestret">mmenestret</a></p>
-    <p style="margin-top:0.5rem;opacity:0.5">Generated 09:41 UTC+02:00</p>
+    <p style="margin-top:0.5rem;opacity:0.5">Generated 11:09 UTC+02:00</p>
   </footer>
 </body>
 </html>
