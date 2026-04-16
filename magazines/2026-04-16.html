@@ -201,6 +201,28 @@
     .hn-link:hover, .read-link:hover { opacity: 0.7; }
     .by { opacity: 0.4; }
 
+    .story-context {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-left: 3px solid currentColor;
+      opacity: 0.5;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+    }
+    .context-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      align-items: center;
+    }
+    .context-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85em; }
+    .context-value { font-weight: 700; }
+    .context-sep { opacity: 0.3; }
+    .engagement-high { color: #22c55e; }
+    .engagement-medium { color: #eab308; }
+    .engagement-rising { color: #3b82f6; }
+
     .colophon {
       min-height: 50vh;
       background: #0a0a0a;
@@ -416,6 +438,36 @@
       font-size: clamp(0.9rem, 1.2vw, 1rem);
     }
 
+    /* ── Tabs ── */
+    .tab-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: #666;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1.1vw, 1rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { color: #aaa; }
+    .tab-btn.active { color: #fff; border-bottom-color: #ff3366; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
   </style>
 </head>
 <body>
@@ -426,6 +478,12 @@
     <div class="cover-subtitle">Daily brief + 10 stories curated for mmenestret</div>
   </header>
 
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="journee">Journée</button>
+    <button class="tab-btn" data-tab="veille">Veille</button>
+  </nav>
+
+  <div id="tab-journee" class="tab-panel active">
 <section class="collisions">
   <div class="collisions-inner">
     <div class="collisions-header">⚠️ Conflits de planning</div>
@@ -481,14 +539,15 @@
 </div>
 </section>
 
+  </div>
 
-  <!-- Veille Section Header -->
-  <section class="section-header" style="background:#0a0a0a;color:#fff">
-    <div class="section-header-inner">
-      <div class="section-kicker">Veille</div>
-      <h2 class="section-title">Hacker News</h2>
-    </div>
-  </section>
+  <div id="tab-veille" class="tab-panel">
+    <section class="section-header" style="background:#0a0a0a;color:#fff">
+      <div class="section-header-inner">
+        <div class="section-kicker">Veille</div>
+        <h2 class="section-title">Hacker News</h2>
+      </div>
+    </section>
 
 <section class="spread spread-hero" style="background:#0a0a0a;color:#ffffff">
   <div class="spread-inner">
@@ -497,9 +556,9 @@
       <div class="story-meta">
         <span class="domain">sleepingrobots.com</span>
         <span class="dot">·</span>
-        <span class="score">510 pts</span>
+        <span class="score">513 pts</span>
         <span class="dot">·</span>
-        <span class="comments">146 comments</span>
+        <span class="comments">150 comments</span>
         <span class="dot">·</span>
         <span class="ago">6h</span>
       </div>
@@ -507,10 +566,21 @@
         <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" target="_blank" rel="noopener" style="color:#ffffff">The local LLM ecosystem doesn’t need Ollama</a>
       </h2>
       <p class="story-description">Ollama gained traction by being the first easy llama.cpp wrapper, then spent years dodging attribution, misleading users, and pivoting to cloud, all while riding VC money earned on someone else</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">Zetaphor</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">29.2% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" class="read-link" style="color:#ff3366" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47788385" class="hn-link" style="color:#ff3366">Discussion HN</a>
-        <span class="by">by Zetaphor</span>
+        <a href="https://news.ycombinator.com/item?id=47788385" class="hn-link" style="color:#ff3366">Discussion HN (150)</a>
       </div>
     </div>
   </div>
@@ -531,10 +601,21 @@
       <h2 class="story-title">
         <a href="https://medium.com/airbnb-engineering/building-a-high-volume-metrics-pipeline-with-opentelemetry-and-vmagent-c714d6910b45" target="_blank" rel="noopener" style="color:#e2e8f0">Moving a large-scale metrics pipeline from StatsD to OpenTelemetry / Prometheus</a>
       </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">jmarbach</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-rising">rising</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">25.0% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://medium.com/airbnb-engineering/building-a-high-volume-metrics-pipeline-with-opentelemetry-and-vmagent-c714d6910b45" class="read-link" style="color:#38bdf8" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47788818" class="hn-link" style="color:#38bdf8">Discussion HN</a>
-        <span class="by">by jmarbach</span>
+        <a href="https://news.ycombinator.com/item?id=47788818" class="hn-link" style="color:#38bdf8">Discussion HN (8)</a>
       </div>
     </div>
   </div>
@@ -546,7 +627,7 @@
       <div class="story-meta">
         <span class="domain">gizmoweek.com</span>
         <span class="dot">·</span>
-        <span class="score">282 pts</span>
+        <span class="score">283 pts</span>
         <span class="dot">·</span>
         <span class="comments">173 comments</span>
         <span class="dot">·</span>
@@ -556,10 +637,21 @@
         <a href="https://www.gizmoweek.com/gemma-4-runs-iphone/" target="_blank" rel="noopener" style="color:#1c1917">Google Gemma 4 Runs Natively on iPhone with Full Offline AI Inference</a>
       </h2>
       <p class="story-description">Google&#039;s Gemma 4 is now live on iPhone with no internet needed. What on-device AI really means for your workflow .</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">takumi123</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">61.1% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://www.gizmoweek.com/gemma-4-runs-iphone/" class="read-link" style="color:#e11d48" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47774971" class="hn-link" style="color:#e11d48">Discussion HN</a>
-        <span class="by">by takumi123</span>
+        <a href="https://news.ycombinator.com/item?id=47774971" class="hn-link" style="color:#e11d48">Discussion HN (173)</a>
       </div>
     </div>
   </div>
@@ -571,7 +663,7 @@
       <div class="story-meta">
         <span class="domain">letaigamble.com</span>
         <span class="dot">·</span>
-        <span class="score">16 pts</span>
+        <span class="score">18 pts</span>
         <span class="dot">·</span>
         <span class="comments">8 comments</span>
         <span class="dot">·</span>
@@ -581,10 +673,21 @@
         <a href="https://letaigamble.com/" target="_blank" rel="noopener" style="color:#c9d1d9">Show HN: Gave Claude a casino bankroll – it gambles till it's too broke to think</a>
       </h2>
       <p class="story-description">An autonomous AI with a gambling addiction. Watch it lose. Donate to keep it going. When it goes broke, it begs. Every message includes real gambling support resources.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">mackbrowne</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-rising">rising</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">44.4% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://letaigamble.com/" class="read-link" style="color:#58a6ff" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47787491" class="hn-link" style="color:#58a6ff">Discussion HN</a>
-        <span class="by">by mackbrowne</span>
+        <a href="https://news.ycombinator.com/item?id=47787491" class="hn-link" style="color:#58a6ff">Discussion HN (8)</a>
       </div>
     </div>
   </div>
@@ -598,18 +701,29 @@
         <span class="dot">·</span>
         <span class="score">141 pts</span>
         <span class="dot">·</span>
-        <span class="comments">74 comments</span>
+        <span class="comments">75 comments</span>
         <span class="dot">·</span>
-        <span class="ago">16h</span>
+        <span class="ago">17h</span>
       </div>
       <h2 class="story-title">
         <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/" target="_blank" rel="noopener" style="color:#1a1a1a">The Gemini app is now on Mac</a>
       </h2>
       <p class="story-description">Google is bringing the Gemini app to macOS as a native desktop experience.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">thm</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">53.2% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/" class="read-link" style="color:#7c3aed" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47782256" class="hn-link" style="color:#7c3aed">Discussion HN</a>
-        <span class="by">by thm</span>
+        <a href="https://news.ycombinator.com/item?id=47782256" class="hn-link" style="color:#7c3aed">Discussion HN (75)</a>
       </div>
     </div>
   </div>
@@ -631,10 +745,21 @@
         <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" target="_blank" rel="noopener" style="color:#fafafa">Open Source Isn't Dead</a>
       </h2>
       <p class="story-description">AI has changed vulnerability discovery, but closing source code does not remove the attack surface. Continuous AI defense is the better response.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">bearsyankees</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">52.4% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" class="read-link" style="color:#22d3ee" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47780712" class="hn-link" style="color:#22d3ee">Discussion HN</a>
-        <span class="by">by bearsyankees</span>
+        <a href="https://news.ycombinator.com/item?id=47780712" class="hn-link" style="color:#22d3ee">Discussion HN (172)</a>
       </div>
     </div>
   </div>
@@ -646,7 +771,7 @@
       <div class="story-meta">
         <span class="domain">tailscale.com</span>
         <span class="dot">·</span>
-        <span class="score">21 pts</span>
+        <span class="score">23 pts</span>
         <span class="dot">·</span>
         <span class="comments">1 comments</span>
         <span class="dot">·</span>
@@ -656,10 +781,21 @@
         <a href="https://tailscale.com/blog/tailscale-rs-rust-tsnet-library-preview" target="_blank" rel="noopener" style="color:#292524">Tailscale-rs: Official Rust library for embedding Tailscale</a>
       </h2>
       <p class="story-description">We&#x27;ve launched an experimental Rust library for Tailscale via tsnet. Help test tailscale-rs and shape it with your feedback.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">phantomathkg</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-rising">rising</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">4.3% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://tailscale.com/blog/tailscale-rs-rust-tsnet-library-preview" class="read-link" style="color:#d97706" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47787957" class="hn-link" style="color:#d97706">Discussion HN</a>
-        <span class="by">by phantomathkg</span>
+        <a href="https://news.ycombinator.com/item?id=47787957" class="hn-link" style="color:#d97706">Discussion HN (1)</a>
       </div>
     </div>
   </div>
@@ -671,7 +807,7 @@
       <div class="story-meta">
         <span class="domain">github.com</span>
         <span class="dot">·</span>
-        <span class="score">235 pts</span>
+        <span class="score">237 pts</span>
         <span class="dot">·</span>
         <span class="comments">113 comments</span>
         <span class="dot">·</span>
@@ -681,10 +817,21 @@
         <a href="https://github.com/gastownhall/gastown/issues/3649" target="_blank" rel="noopener" style="color:#14532d">Does Gas Town 'steal' usage from users' LLM credits to improve itself?</a>
       </h2>
       <p class="story-description">gastown-release.formula.toml and beads-release.formula.toml causes local Gas Town installation to review open Issues on github.com/steveyegge/gastown/actions, burning through usage on subscribed LL...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">rektomatic</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">47.7% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://github.com/gastownhall/gastown/issues/3649" class="read-link" style="color:#16a34a" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47785053" class="hn-link" style="color:#16a34a">Discussion HN</a>
-        <span class="by">by rektomatic</span>
+        <a href="https://news.ycombinator.com/item?id=47785053" class="hn-link" style="color:#16a34a">Discussion HN (113)</a>
       </div>
     </div>
   </div>
@@ -696,9 +843,9 @@
       <div class="story-meta">
         <span class="domain">daedal.io</span>
         <span class="dot">·</span>
-        <span class="score">163 pts</span>
+        <span class="score">169 pts</span>
         <span class="dot">·</span>
-        <span class="comments">94 comments</span>
+        <span class="comments">97 comments</span>
         <span class="dot">·</span>
         <span class="ago">6h</span>
       </div>
@@ -746,10 +893,21 @@ Thom Zane: "Does anyone on the fediverse either work on the #…" - the daedal e
 
 
 <meta content=</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">pabs3</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">57.4% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://daedal.io/@thomzane/116410863009847575" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47788424" class="hn-link" style="color:#ff6b6b">Discussion HN</a>
-        <span class="by">by pabs3</span>
+        <a href="https://news.ycombinator.com/item?id=47788424" class="hn-link" style="color:#ff6b6b">Discussion HN (97)</a>
       </div>
     </div>
   </div>
@@ -761,27 +919,50 @@ Thom Zane: "Does anyone on the fediverse either work on the #…" - the daedal e
       <div class="story-meta">
         <span class="domain">fingfx.thomsonreuters.com</span>
         <span class="dot">·</span>
-        <span class="score">138 pts</span>
+        <span class="score">139 pts</span>
         <span class="dot">·</span>
-        <span class="comments">98 comments</span>
+        <span class="comments">99 comments</span>
         <span class="dot">·</span>
         <span class="ago">20h</span>
       </div>
       <h2 class="story-title">
         <a href="https://fingfx.thomsonreuters.com/gfx/legaldocs/xmvjyjekkpr/Rakoff%20-%20order%20-%20AI.pdf" target="_blank" rel="noopener" style="color:#2d2d2d">US v. Heppner (S.D.N.Y. 2026) no attorney-client privilege for AI chats [pdf]</a>
       </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">1vuio0pswjnm7</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">71.2% commentaires</span>
+        </div>
+      </div>
       <div class="story-footer">
         <a href="https://fingfx.thomsonreuters.com/gfx/legaldocs/xmvjyjekkpr/Rakoff%20-%20order%20-%20AI.pdf" class="read-link" style="color:#c0392b" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47778920" class="hn-link" style="color:#c0392b">Discussion HN</a>
-        <span class="by">by 1vuio0pswjnm7</span>
+        <a href="https://news.ycombinator.com/item?id=47778920" class="hn-link" style="color:#c0392b">Discussion HN (99)</a>
       </div>
     </div>
   </div>
 </section>
+  </div>
 
   <footer class="colophon">
     <p>Morning Edition — curated daily by <a href="https://github.com/mmenestret">mmenestret</a></p>
-    <p style="margin-top:0.5rem;opacity:0.5">Generated 12:18 UTC+02:00</p>
+    <p style="margin-top:0.5rem;opacity:0.5">Generated 12:29 UTC+02:00</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
