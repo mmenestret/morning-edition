@@ -178,19 +178,27 @@
       transition: opacity 0.2s;
     }
     .story-title a:hover { opacity: 0.7; }
+    .story-description {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      line-height: 1.6;
+      opacity: 0.7;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
     .story-footer {
       display: flex;
       gap: 2rem;
       align-items: center;
       font-size: clamp(0.85rem, 1.3vw, 1.1rem);
     }
-    .hn-link {
+    .hn-link, .read-link {
       font-family: var(--ff-mono);
       text-decoration: none;
       font-weight: 700;
       transition: opacity 0.2s;
     }
-    .hn-link:hover { opacity: 0.7; }
+    .hn-link:hover, .read-link:hover { opacity: 0.7; }
     .by { opacity: 0.4; }
 
     .colophon {
@@ -230,7 +238,7 @@
       <div class="story-meta">
         <span class="domain">medium.com</span>
         <span class="dot">·</span>
-        <span class="score">25 pts</span>
+        <span class="score">26 pts</span>
         <span class="dot">·</span>
         <span class="comments">6 comments</span>
         <span class="dot">·</span>
@@ -240,6 +248,7 @@
         <a href="https://medium.com/airbnb-engineering/building-a-high-volume-metrics-pipeline-with-opentelemetry-and-vmagent-c714d6910b45" target="_blank" rel="noopener" style="color:#ffffff">Moving a large-scale metrics pipeline from StatsD to OpenTelemetry / Prometheus</a>
       </h2>
       <div class="story-footer">
+        <a href="https://medium.com/airbnb-engineering/building-a-high-volume-metrics-pipeline-with-opentelemetry-and-vmagent-c714d6910b45" class="read-link" style="color:#ff3366" target="_blank">Lire l'article</a>
         <a href="https://news.ycombinator.com/item?id=47788818" class="hn-link" style="color:#ff3366">Discussion HN</a>
         <span class="by">by jmarbach</span>
       </div>
@@ -251,20 +260,22 @@
     <div class="numeral numeral-outline" style="color:transparent;-webkit-text-stroke:2px #38bdf8">02</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">tailscale.com</span>
+        <span class="domain">gizmoweek.com</span>
         <span class="dot">·</span>
-        <span class="score">12 pts</span>
+        <span class="score">279 pts</span>
         <span class="dot">·</span>
-        <span class="comments">1 comments</span>
+        <span class="comments">169 comments</span>
         <span class="dot">·</span>
-        <span class="ago">4h</span>
+        <span class="ago">1j</span>
       </div>
       <h2 class="story-title">
-        <a href="https://tailscale.com/blog/tailscale-rs-rust-tsnet-library-preview" target="_blank" rel="noopener" style="color:#e2e8f0">Tailscale-rs: Official Rust library for embedding Tailscale</a>
+        <a href="https://www.gizmoweek.com/gemma-4-runs-iphone/" target="_blank" rel="noopener" style="color:#e2e8f0">Google Gemma 4 Runs Natively on iPhone with Full Offline AI Inference</a>
       </h2>
+      <p class="story-description">Google&#039;s Gemma 4 is now live on iPhone with no internet needed. What on-device AI really means for your workflow .</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47787957" class="hn-link" style="color:#38bdf8">Discussion HN</a>
-        <span class="by">by phantomathkg</span>
+        <a href="https://www.gizmoweek.com/gemma-4-runs-iphone/" class="read-link" style="color:#38bdf8" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47774971" class="hn-link" style="color:#38bdf8">Discussion HN</a>
+        <span class="by">by takumi123</span>
       </div>
     </div>
   </div>
@@ -274,20 +285,22 @@
     <div class="numeral numeral-stamp"><span class="stamp-box">03</span></div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">github.com</span>
+        <span class="domain">letaigamble.com</span>
         <span class="dot">·</span>
-        <span class="score">93 pts</span>
+        <span class="score">9 pts</span>
         <span class="dot">·</span>
-        <span class="comments">33 comments</span>
+        <span class="comments">6 comments</span>
         <span class="dot">·</span>
-        <span class="ago">15h</span>
+        <span class="ago">6h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://github.com/saffron-health/libretto" target="_blank" rel="noopener" style="color:#1c1917">Show HN: Libretto – Making AI browser automations deterministic</a>
+        <a href="https://letaigamble.com/" target="_blank" rel="noopener" style="color:#1c1917">Show HN: Gave Claude a casino bankroll – it gambles till it's too broke to think</a>
       </h2>
+      <p class="story-description">An autonomous AI with a gambling addiction. Watch it lose. Donate to keep it going. When it goes broke, it begs. Every message includes real gambling support resources.</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47780971" class="hn-link" style="color:#e11d48">Discussion HN</a>
-        <span class="by">by muchael</span>
+        <a href="https://letaigamble.com/" class="read-link" style="color:#e11d48" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47787491" class="hn-link" style="color:#e11d48">Discussion HN</a>
+        <span class="by">by mackbrowne</span>
       </div>
     </div>
   </div>
@@ -297,20 +310,22 @@
     <div class="numeral numeral-prompt"><span class="prompt-symbol">$</span> #04</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">letaigamble.com</span>
+        <span class="domain">blog.google</span>
         <span class="dot">·</span>
-        <span class="score">8 pts</span>
+        <span class="score">132 pts</span>
         <span class="dot">·</span>
-        <span class="comments">3 comments</span>
+        <span class="comments">65 comments</span>
         <span class="dot">·</span>
-        <span class="ago">5h</span>
+        <span class="ago">14h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://letaigamble.com/" target="_blank" rel="noopener" style="color:#c9d1d9">Show HN: Gave Claude a casino bankroll – it gambles till it's too broke to think</a>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/" target="_blank" rel="noopener" style="color:#c9d1d9">The Gemini app is now on Mac</a>
       </h2>
+      <p class="story-description">Google is bringing the Gemini app to macOS as a native desktop experience.</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47787491" class="hn-link" style="color:#58a6ff">Discussion HN</a>
-        <span class="by">by mackbrowne</span>
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/" class="read-link" style="color:#58a6ff" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47782256" class="hn-link" style="color:#58a6ff">Discussion HN</a>
+        <span class="by">by thm</span>
       </div>
     </div>
   </div>
@@ -320,20 +335,22 @@
     <div class="numeral numeral-dropcap">E</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">blog.google</span>
+        <span class="domain">strix.ai</span>
         <span class="dot">·</span>
-        <span class="score">132 pts</span>
+        <span class="score">324 pts</span>
         <span class="dot">·</span>
-        <span class="comments">64 comments</span>
+        <span class="comments">170 comments</span>
         <span class="dot">·</span>
-        <span class="ago">13h</span>
+        <span class="ago">15h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/" target="_blank" rel="noopener" style="color:#1a1a1a">The Gemini app is now on Mac</a>
+        <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" target="_blank" rel="noopener" style="color:#1a1a1a">Open Source Isn't Dead</a>
       </h2>
+      <p class="story-description">AI has changed vulnerability discovery, but closing source code does not remove the attack surface. Continuous AI defense is the better response.</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47782256" class="hn-link" style="color:#7c3aed">Discussion HN</a>
-        <span class="by">by thm</span>
+        <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" class="read-link" style="color:#7c3aed" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47780712" class="hn-link" style="color:#7c3aed">Discussion HN</a>
+        <span class="by">by bearsyankees</span>
       </div>
     </div>
   </div>
@@ -343,20 +360,22 @@
     <div class="numeral numeral-bigstat">06<span class="stat-slash">/</span>10</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">strix.ai</span>
+        <span class="domain">sleepingrobots.com</span>
         <span class="dot">·</span>
-        <span class="score">322 pts</span>
+        <span class="score">243 pts</span>
         <span class="dot">·</span>
-        <span class="comments">170 comments</span>
+        <span class="comments">52 comments</span>
         <span class="dot">·</span>
-        <span class="ago">15h</span>
+        <span class="ago">4h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://www.strix.ai/blog/cal-com-is-closing-its-code-due-to-ai-threats" target="_blank" rel="noopener" style="color:#fafafa">Open Source Isn't Dead</a>
+        <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" target="_blank" rel="noopener" style="color:#fafafa">Stop Using Ollama</a>
       </h2>
+      <p class="story-description">Ollama gained traction by being the first easy llama.cpp wrapper, then spent years dodging attribution, misleading users, and pivoting to cloud, all while riding VC money earned on someone else</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47780712" class="hn-link" style="color:#22d3ee">Discussion HN</a>
-        <span class="by">by bearsyankees</span>
+        <a href="https://sleepingrobots.com/dreams/stop-using-ollama/" class="read-link" style="color:#22d3ee" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47788385" class="hn-link" style="color:#22d3ee">Discussion HN</a>
+        <span class="by">by Zetaphor</span>
       </div>
     </div>
   </div>
@@ -366,20 +385,22 @@
     <div class="numeral numeral-serif">07</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">gizmoweek.com</span>
+        <span class="domain">tailscale.com</span>
         <span class="dot">·</span>
-        <span class="score">278 pts</span>
+        <span class="score">16 pts</span>
         <span class="dot">·</span>
-        <span class="comments">168 comments</span>
+        <span class="comments">1 comments</span>
         <span class="dot">·</span>
-        <span class="ago">1j</span>
+        <span class="ago">5h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://www.gizmoweek.com/gemma-4-runs-iphone/" target="_blank" rel="noopener" style="color:#292524">Google Gemma 4 Runs Natively on iPhone with Full Offline AI Inference</a>
+        <a href="https://tailscale.com/blog/tailscale-rs-rust-tsnet-library-preview" target="_blank" rel="noopener" style="color:#292524">Tailscale-rs: Official Rust library for embedding Tailscale</a>
       </h2>
+      <p class="story-description">We&#x27;ve launched an experimental Rust library for Tailscale via tsnet. Help test tailscale-rs and shape it with your feedback.</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47774971" class="hn-link" style="color:#d97706">Discussion HN</a>
-        <span class="by">by takumi123</span>
+        <a href="https://tailscale.com/blog/tailscale-rs-rust-tsnet-library-preview" class="read-link" style="color:#d97706" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47787957" class="hn-link" style="color:#d97706">Discussion HN</a>
+        <span class="by">by phantomathkg</span>
       </div>
     </div>
   </div>
@@ -389,20 +410,22 @@
     <div class="numeral numeral-circle"><span>08</span></div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">fingfx.thomsonreuters.com</span>
+        <span class="domain">zenodo.org</span>
         <span class="dot">·</span>
-        <span class="score">120 pts</span>
+        <span class="score">17 pts</span>
         <span class="dot">·</span>
-        <span class="comments">94 comments</span>
+        <span class="comments">7 comments</span>
         <span class="dot">·</span>
-        <span class="ago">17h</span>
+        <span class="ago">7h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://fingfx.thomsonreuters.com/gfx/legaldocs/xmvjyjekkpr/Rakoff%20-%20order%20-%20AI.pdf" target="_blank" rel="noopener" style="color:#14532d">US v. Heppner (S.D.N.Y. 2026) no attorney-client privilege for AI chats [pdf]</a>
+        <a href="https://zenodo.org/records/19600206" target="_blank" rel="noopener" style="color:#14532d">The Universal Constraint Engine: Neuromorphic Computing Without Neural Networks</a>
       </h2>
+      <p class="story-description">We introduce the Universal Constraint Engine (UCE), a system for generating emergent multi-state architectures from declarative constraint rules over conserved quantities. Unlike conventional neural network architectures that rely on learned weights, gradient descent, and massive training corpora...</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47778920" class="hn-link" style="color:#16a34a">Discussion HN</a>
-        <span class="by">by 1vuio0pswjnm7</span>
+        <a href="https://zenodo.org/records/19600206" class="read-link" style="color:#16a34a" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47786836" class="hn-link" style="color:#16a34a">Discussion HN</a>
+        <span class="by">by skinney_uce</span>
       </div>
     </div>
   </div>
@@ -412,20 +435,22 @@
     <div class="numeral numeral-neon">09</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">chatgpt.com</span>
+        <span class="domain">github.com</span>
         <span class="dot">·</span>
-        <span class="score">178 pts</span>
+        <span class="score">231 pts</span>
         <span class="dot">·</span>
-        <span class="comments">126 comments</span>
+        <span class="comments">112 comments</span>
         <span class="dot">·</span>
-        <span class="ago">9h</span>
+        <span class="ago">10h</span>
       </div>
       <h2 class="story-title">
-        <a href="https://chatgpt.com/apps/spreadsheets/" target="_blank" rel="noopener" style="color:#eee">ChatGPT for Excel</a>
+        <a href="https://github.com/gastownhall/gastown/issues/3649" target="_blank" rel="noopener" style="color:#eee">Does Gas Town 'steal' usage from users' LLM credits to improve itself?</a>
       </h2>
+      <p class="story-description">gastown-release.formula.toml and beads-release.formula.toml causes local Gas Town installation to review open Issues on github.com/steveyegge/gastown/actions, burning through usage on subscribed LL...</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47785397" class="hn-link" style="color:#ff6b6b">Discussion HN</a>
-        <span class="by">by armcat</span>
+        <a href="https://github.com/gastownhall/gastown/issues/3649" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47785053" class="hn-link" style="color:#ff6b6b">Discussion HN</a>
+        <span class="by">by rektomatic</span>
       </div>
     </div>
   </div>
@@ -435,20 +460,22 @@
     <div class="numeral numeral-roman">X</div>
     <div class="story-content">
       <div class="story-meta">
-        <span class="domain">pythonhosted.org</span>
+        <span class="domain">aalonso.dev</span>
         <span class="dot">·</span>
-        <span class="score">46 pts</span>
+        <span class="score">128 pts</span>
         <span class="dot">·</span>
-        <span class="comments">20 comments</span>
+        <span class="comments">69 comments</span>
         <span class="dot">·</span>
-        <span class="ago">9h</span>
+        <span class="ago">3j</span>
       </div>
       <h2 class="story-title">
-        <a href="https://pythonhosted.org/hackernews-cli/commands.html" target="_blank" rel="noopener" style="color:#2d2d2d">Hacker News CLI (2014)</a>
+        <a href="https://aalonso.dev/blog/2023/how-to-fix-monitor-that-goes-black-off-due-to-static-electricity-in-chair/" target="_blank" rel="noopener" style="color:#2d2d2d">Fixing a monitor that goes black, off or blinks due to static electricity (2023)</a>
       </h2>
+      <p class="story-description">If you often get static electricity shocks when touching your laptop or your office chair, or your monitor goes black when you stand up, this may interest you.</p>
       <div class="story-footer">
-        <a href="https://news.ycombinator.com/item?id=47785582" class="hn-link" style="color:#c0392b">Discussion HN</a>
-        <span class="by">by rolph</span>
+        <a href="https://aalonso.dev/blog/2023/how-to-fix-monitor-that-goes-black-off-due-to-static-electricity-in-chair/" class="read-link" style="color:#c0392b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47738081" class="hn-link" style="color:#c0392b">Discussion HN</a>
+        <span class="by">by cyclopeanutopia</span>
       </div>
     </div>
   </div>
@@ -456,7 +483,7 @@
 
   <footer class="colophon">
     <p>Morning Edition — curated daily by <a href="https://github.com/mmenestret">mmenestret</a></p>
-    <p style="margin-top:0.5rem;opacity:0.5">Generated 09:09 UTC+02:00</p>
+    <p style="margin-top:0.5rem;opacity:0.5">Generated 09:41 UTC+02:00</p>
   </footer>
 </body>
 </html>
