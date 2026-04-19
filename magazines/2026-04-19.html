@@ -540,13 +540,60 @@
 <body>
   <header class="cover">
     <div class="cover-kicker">Morning Edition</div>
-    <h1 class="cover-title">Hacker<br>News</h1>
+    <h1 class="cover-title">Ma<br>Journée</h1>
     <div class="cover-date">dimanche 19 avril 2026</div>
-    <div class="cover-subtitle">10 stories curated for mmenestret</div>
+    <div class="cover-subtitle">Daily brief + 10 stories curated for mmenestret</div>
   </header>
 
 
-  <div id="tab-veille" class="tab-panel active">
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="journee">Journée</button>
+    <button class="tab-btn" data-tab="veille">Veille</button>
+  </nav>
+
+  <div id="tab-journee" class="tab-panel active">
+<section class="daily-panels">
+<div class="panel">
+  <div class="panel-header">    <span class="panel-icon">🏠</span>    <span class="panel-label">Journée Perso</span>    <span class="panel-tag tag-perso">Famille</span>  </div>
+  <div class="event-row">
+    <div class="event-time">all-day–</div>
+    <div>
+      <div class="event-title">Vacances de Printemps</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">all-day–</div>
+    <div>
+      <div class="event-title">Filles à Étel</div>
+    </div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">📬</span>    <span class="panel-label">Mails perso en attente</span>  </div>
+  <div class="email-row">
+    <div class="email-from">Analytics Engineering Roundup <analyticsengineeringroundup@substack.com></div>
+    <div class="email-subject">Five things I believe about the future of analytics</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">AR24 <contenu@ar24.fr></div>
+    <div class="email-subject">Contenu de votre avis électronique n°61003097</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">ChouetteCopro <notifications@chouette.immo></div>
+    <div class="email-subject">[Actiim]  - Du Vendredi 10 Avr. au Vendredi 17 Avr. : 1 signalement et 2 mises à jour</div>
+    <div class="email-waiting">1j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Votre Assurance Maladie <assurance-maladie@info.ameli.fr></div>
+    <div class="email-subject">Information de paiement</div>
+    <div class="email-waiting">4j</div>
+  </div>
+</div>
+</section>
+
+  </div>
+
+  <div id="tab-veille" class="tab-panel">
 
     <section class="section-header" style="background:#0a0a0a;color:#fff">
       <div class="section-header-inner">
@@ -598,9 +645,9 @@
       <div class="story-meta">
         <span class="domain">sentinelcolorado.com</span>
         <span class="dot">·</span>
-        <span class="score">329 pts</span>
+        <span class="score">331 pts</span>
         <span class="dot">·</span>
-        <span class="comments">325 comments</span>
+        <span class="comments">327 comments</span>
         <span class="dot">·</span>
         <span class="ago">18h</span>
       </div>
@@ -622,7 +669,7 @@
       </div>
       <div class="story-footer">
         <a href="https://sentinelcolorado.com/uncategorized/a-college-instructor-turns-to-typewriters-to-curb-ai-written-work-and-teach-life-lessons/" class="read-link" style="color:#38bdf8" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47818485" class="hn-link" style="color:#38bdf8">Discussion HN (325)</a>
+        <a href="https://news.ycombinator.com/item?id=47818485" class="hn-link" style="color:#38bdf8">Discussion HN (327)</a>
       </div>
     </div>
   </div>
@@ -634,9 +681,9 @@
       <div class="story-meta">
         <span class="domain">simonwillison.net</span>
         <span class="dot">·</span>
-        <span class="score">51 pts</span>
+        <span class="score">53 pts</span>
         <span class="dot">·</span>
-        <span class="comments">22 comments</span>
+        <span class="comments">26 comments</span>
         <span class="dot">·</span>
         <span class="ago">2h</span>
       </div>
@@ -653,12 +700,12 @@
           <span class="context-value engagement-medium">medium</span>
           <span class="context-sep">·</span>
           <span class="context-label">Ratio</span>
-          <span class="context-value">43.1% commentaires</span>
+          <span class="context-value">49.1% commentaires</span>
         </div>
       </div>
       <div class="story-footer">
         <a href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" class="read-link" style="color:#e11d48" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47823270" class="hn-link" style="color:#e11d48">Discussion HN (22)</a>
+        <a href="https://news.ycombinator.com/item?id=47823270" class="hn-link" style="color:#e11d48">Discussion HN (26)</a>
       </div>
     </div>
   </div>
@@ -779,7 +826,7 @@
         <span class="dot">·</span>
         <span class="score">6 pts</span>
         <span class="dot">·</span>
-        <span class="comments">1 comments</span>
+        <span class="comments">6 comments</span>
         <span class="dot">·</span>
         <span class="ago">2h</span>
       </div>
@@ -796,12 +843,12 @@
           <span class="context-value engagement-rising">rising</span>
           <span class="context-sep">·</span>
           <span class="context-label">Ratio</span>
-          <span class="context-value">16.7% commentaires</span>
+          <span class="context-value">100.0% commentaires</span>
         </div>
       </div>
       <div class="story-footer">
         <a href="https://teamchong.github.io/turboquant-wasm/draw.html" class="read-link" style="color:#d97706" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47823460" class="hn-link" style="color:#d97706">Discussion HN (1)</a>
+        <a href="https://news.ycombinator.com/item?id=47823460" class="hn-link" style="color:#d97706">Discussion HN (6)</a>
       </div>
     </div>
   </div>
@@ -813,7 +860,7 @@
       <div class="story-meta">
         <span class="domain">worksinprogress.co</span>
         <span class="dot">·</span>
-        <span class="score">446 pts</span>
+        <span class="score">447 pts</span>
         <span class="dot">·</span>
         <span class="comments">423 comments</span>
         <span class="dot">·</span>
@@ -832,7 +879,7 @@
           <span class="context-value engagement-high">high</span>
           <span class="context-sep">·</span>
           <span class="context-label">Ratio</span>
-          <span class="context-value">94.8% commentaires</span>
+          <span class="context-value">94.6% commentaires</span>
         </div>
       </div>
       <div class="story-footer">
@@ -851,9 +898,9 @@
         <span class="dot">·</span>
         <span class="score">338 pts</span>
         <span class="dot">·</span>
-        <span class="comments">212 comments</span>
+        <span class="comments">213 comments</span>
         <span class="dot">·</span>
-        <span class="ago">17h</span>
+        <span class="ago">18h</span>
       </div>
       <h2 class="story-title">
         <a href="https://samhenri.gold/blog/20260418-claude-design/" target="_blank" rel="noopener" style="color:#eee">Thoughts and feelings around Claude Design</a>
@@ -868,12 +915,12 @@
           <span class="context-value engagement-high">high</span>
           <span class="context-sep">·</span>
           <span class="context-label">Ratio</span>
-          <span class="context-value">62.7% commentaires</span>
+          <span class="context-value">63.0% commentaires</span>
         </div>
       </div>
       <div class="story-footer">
         <a href="https://samhenri.gold/blog/20260418-claude-design/" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
-        <a href="https://news.ycombinator.com/item?id=47818700" class="hn-link" style="color:#ff6b6b">Discussion HN (212)</a>
+        <a href="https://news.ycombinator.com/item?id=47818700" class="hn-link" style="color:#ff6b6b">Discussion HN (213)</a>
       </div>
     </div>
   </div>
@@ -885,7 +932,7 @@
       <div class="story-meta">
         <span class="domain">abacusnoir.com</span>
         <span class="dot">·</span>
-        <span class="score">94 pts</span>
+        <span class="score">95 pts</span>
         <span class="dot">·</span>
         <span class="comments">37 comments</span>
         <span class="dot">·</span>
@@ -904,7 +951,7 @@
           <span class="context-value engagement-medium">medium</span>
           <span class="context-sep">·</span>
           <span class="context-label">Ratio</span>
-          <span class="context-value">39.4% commentaires</span>
+          <span class="context-value">38.9% commentaires</span>
         </div>
       </div>
       <div class="story-footer">
@@ -918,7 +965,7 @@
 
   <footer class="colophon">
     <p>Morning Edition — curated daily by <a href="https://github.com/mmenestret">mmenestret</a></p>
-    <p style="margin-top:0.5rem;opacity:0.5">Generated 15:18 UTC+02:00</p>
+    <p style="margin-top:0.5rem;opacity:0.5">Generated 15:27 UTC+02:00</p>
   </footer>
 
   <script>
