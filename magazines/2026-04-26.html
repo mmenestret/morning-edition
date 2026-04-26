@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morning Edition — dimanche 26 avril 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ff-display: 'Fraunces', serif;
+      --ff-body: 'Inter', sans-serif;
+      --ff-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); -webkit-font-smoothing: antialiased; }
+
+    .cover {
+      min-height: 100vh;
+      background: #0a0a0a;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,51,102,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 50%, rgba(56,189,248,0.06) 0%, transparent 50%);
+    }
+    .cover-kicker {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1.2vw, 1rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #ff3366;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .cover-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .cover-date {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-weight: 300;
+      color: #888;
+      position: relative;
+    }
+    .cover-subtitle {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      color: #666;
+      margin-top: 1rem;
+      position: relative;
+    }
+
+    .spread {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 6rem);
+      position: relative;
+    }
+    .spread-inner {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .numeral {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+    .numeral-giant {
+      font-size: clamp(6rem, 15vw, 14rem);
+      opacity: 0.15;
+      position: absolute;
+      top: clamp(1rem, 3vw, 3rem);
+      right: clamp(1rem, 3vw, 3rem);
+    }
+    .numeral-outline {
+      font-size: clamp(5rem, 12vw, 10rem);
+      -webkit-text-stroke: 2px;
+      color: transparent;
+    }
+    .numeral-stamp { font-size: clamp(3rem, 8vw, 6rem); }
+    .stamp-box {
+      border: 4px solid currentColor;
+      padding: 0.2em 0.4em;
+      letter-spacing: 0.1em;
+    }
+    .numeral-prompt {
+      font-family: var(--ff-mono);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+    }
+    .numeral-dropcap {
+      font-family: var(--ff-display);
+      font-size: clamp(6rem, 15vw, 12rem);
+      font-weight: 900;
+      font-style: italic;
+      float: left;
+      line-height: 0.75;
+      margin-right: 1.5rem;
+      margin-top: 0.3rem;
+    }
+    .numeral-bigstat { font-size: clamp(4rem, 10vw, 8rem); font-weight: 900; }
+    .stat-slash { font-weight: 300; opacity: 0.3; margin: 0 0.1em; }
+    .numeral-serif {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-style: italic;
+      font-weight: 300;
+    }
+    .numeral-circle {
+      width: clamp(4rem, 8vw, 7rem);
+      height: clamp(4rem, 8vw, 7rem);
+      border: 3px solid currentColor;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+    }
+    .numeral-neon {
+      font-family: var(--ff-mono);
+      font-size: clamp(4rem, 10vw, 8rem);
+      text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    }
+    .numeral-roman {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 200;
+      letter-spacing: 0.15em;
+    }
+
+    .story-meta {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1.2vw, 1rem);
+      opacity: 0.6;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      align-items: center;
+    }
+    .dot { opacity: 0.3; }
+    .story-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+    .story-title a {
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .story-title a:hover { opacity: 0.7; }
+    .story-description {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      line-height: 1.7;
+      opacity: 0.75;
+      max-width: 750px;
+      margin-bottom: 2rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+    .story-footer {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+    }
+    .hn-link, .read-link {
+      font-family: var(--ff-mono);
+      text-decoration: none;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .hn-link:hover, .read-link:hover { opacity: 0.7; }
+    .by { opacity: 0.4; }
+
+    .story-context {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-left: 3px solid currentColor;
+      opacity: 0.5;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+    }
+    .context-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      align-items: center;
+    }
+    .context-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85em; }
+    .context-value { font-weight: 700; }
+    .context-sep { opacity: 0.3; }
+    .engagement-high { color: #22c55e; }
+    .engagement-medium { color: #eab308; }
+    .engagement-rising { color: #3b82f6; }
+
+    .colophon {
+      min-height: 50vh;
+      background: #0a0a0a;
+      color: #666;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+    }
+    .colophon a { color: #ff3366; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .numeral-dropcap { float: none; margin-right: 0; margin-bottom: 1rem; }
+      .story-footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+    }
+
+    /* ── Section Headers ── */
+    .section-header {
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .section-header-inner { max-width: 800px; }
+    .section-kicker {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.9rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    /* ── Daily Panels ── */
+    .daily-panels {
+      padding: clamp(2rem, 5vw, 6rem);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .panel {
+      margin-bottom: 4rem;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(128,128,128,0.2);
+    }
+    .panel-icon {
+      font-size: 1.5rem;
+    }
+    .panel-label {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .panel-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      padding: 0.2em 0.6em;
+      border-radius: 3px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .tag-pro { background: #1e3a5f; color: #7dd3fc; }
+    .tag-perso { background: #3b1f3b; color: #f0abfc; }
+
+    .event-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: start;
+    }
+    .event-time {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      font-weight: 700;
+      opacity: 0.8;
+    }
+    .event-title {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .event-meta {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+      opacity: 0.5;
+    }
+    .event-note {
+      font-family: var(--ff-body);
+      font-size: clamp(0.8rem, 1vw, 0.95rem);
+      opacity: 0.6;
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    .email-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .email-from {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .email-subject {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .email-waiting {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+      white-space: nowrap;
+    }
+
+    .todo-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .todo-priority {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15em 0.5em;
+      border-radius: 3px;
+    }
+    .prio-p1 { background: #dc2626; color: #fff; }
+    .prio-p2 { background: #f59e0b; color: #000; }
+    .prio-p3 { background: #6b7280; color: #fff; }
+    .todo-content {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+    .todo-due {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    .empty-panel {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      opacity: 0.4;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+
+    /* ── Claude Code updates ── */
+    .external-updates {
+      background: #111827;
+      color: #f9fafb;
+      padding: clamp(2rem, 5vw, 5rem);
+    }
+    .external-updates-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .update-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .update-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      min-height: 100%;
+    }
+    .update-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #93c5fd;
+    }
+    .update-card-date {
+      color: rgba(255,255,255,0.55);
+      letter-spacing: normal;
+      text-transform: none;
+      font-size: 0.8rem;
+    }
+    .update-card-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.3rem, 2vw, 1.9rem);
+      line-height: 1.15;
+      color: #fff;
+    }
+    .update-card-details {
+      font-family: var(--ff-body);
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.76);
+      flex: 1;
+    }
+    .update-card-link {
+      font-family: var(--ff-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fda4af;
+      text-decoration: none;
+    }
+
+    /* ── Collisions ── */
+    .collisions {
+      background: #450a0a;
+      color: #fca5a5;
+      padding: clamp(2rem, 4vw, 4rem);
+    }
+    .collisions-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .collisions-header {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fecaca;
+      margin-bottom: 1.5rem;
+    }
+    .collision-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(252,165,165,0.15);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+    }
+    .collision-time {
+      font-family: var(--ff-mono);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    }
+    .collision-detail {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+
+    /* ── Tabs ── */
+    .tab-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: #666;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1.1vw, 1rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { color: #aaa; }
+    .tab-btn.active { color: #fff; border-bottom-color: #ff3366; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+  </style>
+</head>
+<body>
+  <header class="cover">
+    <div class="cover-kicker">Morning Edition</div>
+    <h1 class="cover-title">Ma<br>Journée</h1>
+    <div class="cover-date">dimanche 26 avril 2026</div>
+    <div class="cover-subtitle">Daily brief + 10 stories curated for mmenestret</div>
+  </header>
+
+
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="journee">Journée</button>
+    <button class="tab-btn" data-tab="veille">Veille</button>
+  </nav>
+
+  <div id="tab-journee" class="tab-panel active">
+<section class="daily-panels">
+<div class="panel">
+  <div class="panel-header">    <span class="panel-icon">🏠</span>    <span class="panel-label">Journée Perso</span>    <span class="panel-tag tag-perso">Famille</span>  </div>
+  <div class="event-row">
+    <div class="event-time">all-day–</div>
+    <div>
+      <div class="event-title">Vacances de Printemps</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">11:00–18:00</div>
+    <div>
+      <div class="event-title">BBQ + vielles voitures chez Alban / Lulu</div>
+    </div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">📬</span>    <span class="panel-label">Mails perso en attente</span>  </div>
+  <div class="email-row">
+    <div class="email-from">ant.wilson@supabase.com</div>
+    <div class="email-subject">Your Supabase Project second-brain is going to be paused.</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Service Client de la tour Eiffel <serviceclients@toureiffel.paris></div>
+    <div class="email-subject">Qu'avez vous pensé de votre visite de la Tour Eiffel ? / What did you think of your visit of the Eiffel Tower?</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Planity SAS <receipts+acct_17CtV2A69XfgDO9E@stripe.com></div>
+    <div class="email-subject">Votre reçu de Planity SAS [n° 1287-6160-4078]</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">ChouetteCopro <notifications@chouette.immo></div>
+    <div class="email-subject">[Actiim]  - Du Vendredi 17 Avr. au Vendredi 24 Avr. : 3 signalements et 3 mises à jour</div>
+    <div class="email-waiting">1j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">FRANCE JUDO <communication@ffjudo.com></div>
+    <div class="email-subject">TATAMI! #8 - Ta dose mensuelle de Judo</div>
+    <div class="email-waiting">1j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Julien Hurault <juhache@substack.com></div>
+    <div class="email-subject">I Let Claude Code Build ELT Connectors. Here’s What Happened.</div>
+    <div class="email-waiting">3j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">"L'Identité Numérique" <actu@lidentitenumerique.laposte.info></div>
+    <div class="email-subject">Déménagement prévu ? Simplifiez‑vous la vie</div>
+    <div class="email-waiting">5j</div>
+  </div>
+</div>
+</section>
+
+  </div>
+
+  <div id="tab-veille" class="tab-panel">
+
+    <section class="section-header" style="background:#0a0a0a;color:#fff">
+      <div class="section-header-inner">
+        <div class="section-kicker">Veille</div>
+        <h2 class="section-title">Hacker News</h2>
+      </div>
+    </section>
+
+<section class="spread spread-hero" style="background:#0a0a0a;color:#ffffff">
+  <div class="spread-inner">
+    <div class="numeral numeral-giant">01</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">openai.com</span>
+        <span class="dot">·</span>
+        <span class="score">142 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">101 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">16h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://openai.com/index/gpt-5-5-bio-bug-bounty/" target="_blank" rel="noopener" style="color:#ffffff">GPT‑5.5 Bio Bug Bounty</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">Murfalo</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">71.1% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://openai.com/index/gpt-5-5-bio-bug-bounty/" class="read-link" style="color:#ff3366" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47901734" class="hn-link" style="color:#ff3366">Discussion HN (101)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-midnight" style="background:#0f172a;color:#e2e8f0">
+  <div class="spread-inner">
+    <div class="numeral numeral-outline" style="color:transparent;-webkit-text-stroke:2px #38bdf8">02</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">openai.com</span>
+        <span class="dot">·</span>
+        <span class="score">174 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">32 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">3j</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://openai.com/index/introducing-openai-privacy-filter/" target="_blank" rel="noopener" style="color:#e2e8f0">OpenAI Privacy Filter</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">tanelpoder</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">18.4% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://openai.com/index/introducing-openai-privacy-filter/" class="read-link" style="color:#38bdf8" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47870901" class="hn-link" style="color:#38bdf8">Discussion HN (32)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-rose" style="background:#fff1f2;color:#1c1917">
+  <div class="spread-inner">
+    <div class="numeral numeral-stamp"><span class="stamp-box">03</span></div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">victortaelin.github.io</span>
+        <span class="dot">·</span>
+        <span class="score">135 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">40 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">19h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://victortaelin.github.io/lambench/" target="_blank" rel="noopener" style="color:#1c1917">Lambda Calculus Benchmark for AI</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">marvinborner</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">29.6% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://victortaelin.github.io/lambench/" class="read-link" style="color:#e11d48" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47900506" class="hn-link" style="color:#e11d48">Discussion HN (40)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-terminal" style="background:#0d1117;color:#c9d1d9">
+  <div class="spread-inner">
+    <div class="numeral numeral-prompt"><span class="prompt-symbol">$</span> #04</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">lmsys.org</span>
+        <span class="dot">·</span>
+        <span class="score">34 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">3 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">6h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.lmsys.org/blog/2026-04-25-deepseek-v4/" target="_blank" rel="noopener" style="color:#c9d1d9">DeepSeek-V4 on Day 0: From Fast Inference to Verified RL with SGLang and Miles</a>
+      </h2>
+      <p class="story-description">We are thrilled to announce Day-0 support for DeepSeek-V4 across both inference and RL training. SGLang and Miles form the first open-source stack to serve and train DeepSeek-V4 on launch day — with s...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">mji</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-rising">rising</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">8.8% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.lmsys.org/blog/2026-04-25-deepseek-v4/" class="read-link" style="color:#58a6ff" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47905768" class="hn-link" style="color:#58a6ff">Discussion HN (3)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-academic" style="background:#faf9f6;color:#1a1a1a">
+  <div class="spread-inner">
+    <div class="numeral numeral-dropcap">E</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">hypertalking.com</span>
+        <span class="dot">·</span>
+        <span class="score">555 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">89 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">3j</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.hypertalking.com/2023/05/08/1-bit-pixel-art-of-hokusais-the-great-wave-off-kanagawa/" target="_blank" rel="noopener" style="color:#1a1a1a">1-Bit Hokusai's "The Great Wave" (2023)</a>
+      </h2>
+      <p class="story-description">About Home 1-bit Hokusai’s ”The Great Wave” 8 May 2023 Pixel art 5 years ago I started a now completely stalled project (fingers crossed I can figure out how to restart soon) to draw all of Hokusai&#8217;s 36 views of Mount Fuji as 1-bit pixel art. I started this project for no other reason than I love to get into the &#8216;flow state&#8217; from this kind of creative endeavour, and obviously I love to use old Macintosh computers. It feels very satisfying to get each pixel to fall into place, capturing both the original vision of Hokusai and the aesthetic that Susan Kare mastered early on with &#8216;the Japanese lady&#8217; . Kare&#8217;s picture of course starred on the cover of every box of MacPaint and you can still buy beautiful prints of it today, directly from her. Another chall...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">stephen-hill</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">16.0% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.hypertalking.com/2023/05/08/1-bit-pixel-art-of-hokusais-the-great-wave-off-kanagawa/" class="read-link" style="color:#7c3aed" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47863570" class="hn-link" style="color:#7c3aed">Discussion HN (89)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-stat" style="background:#18181b;color:#fafafa">
+  <div class="spread-inner">
+    <div class="numeral numeral-bigstat">06<span class="stat-slash">/</span>10</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">unsung.aresluna.org</span>
+        <span class="dot">·</span>
+        <span class="score">290 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">143 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">1j</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://unsung.aresluna.org/plain-text-has-been-around-for-decades-and-its-here-to-stay/" target="_blank" rel="noopener" style="color:#fafafa">Plain text has been around for decades and it’s here to stay</a>
+      </h2>
+      <p class="story-description">Unsung Software craft and quality Posts by Marcin Wichary “Plain text has been around for decades and it’s here to stay.” There’s a category of “plain text” or “ASCII” diagramming and UI design tools: Mockdown – works immediately on the web, even on mobile Wiretext – works on the web, but desktop only Monodraw – a Mac app I believe these are used by people who prefer intentionally limited visual choices, for low-key diagramming to put in source code, and – increasingly – as an entry point to gen AI. They’re so interesting from the standpoint of this blog: Fun to see a contemporary take on something that peaked between 1970s–1980s – you can look up TUIs and Turbo Vision if you want – but (just like Mario the other day ) now with modern sensibilities, performance, web access, mouse and tr...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">rbanffy</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">49.3% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://unsung.aresluna.org/plain-text-has-been-around-for-decades-and-its-here-to-stay/" class="read-link" style="color:#22d3ee" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47897681" class="hn-link" style="color:#22d3ee">Discussion HN (143)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-warm" style="background:#fef3c7;color:#292524">
+  <div class="spread-inner">
+    <div class="numeral numeral-serif">07</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">bloomberg.com</span>
+        <span class="dot">·</span>
+        <span class="score">799 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">803 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">1j</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic" target="_blank" rel="noopener" style="color:#292524">Google plans to invest up to $40B in Anthropic</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">elffjs</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">100.5% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic" class="read-link" style="color:#d97706" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47892074" class="hn-link" style="color:#d97706">Discussion HN (803)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-mint" style="background:#f0fdf4;color:#14532d">
+  <div class="spread-inner">
+    <div class="numeral numeral-circle"><span>08</span></div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">scientificamerican.com</span>
+        <span class="dot">·</span>
+        <span class="score">254 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">168 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">12h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem/" target="_blank" rel="noopener" style="color:#14532d">Amateur armed with ChatGPT solves an Erdős problem</a>
+      </h2>
+      <p class="story-description">Skip to main content Scientific American April 24, 2026 4 min read Add Us On Google Add SciAm An amateur just solved a 60-year-old math problem&mdash;by asking AI A ChatGPT AI has proved a conjecture with a method no human had thought of. Experts believe it may have further uses By Joseph Howlett edited by Lee Billings Eugene Mymrin/Getty Images Love math? Sign up for our weekly newsletter Proof Positive Enter your email I agree my information will be processed in accordance with the Scientific American and Springer Nature Limited Privacy Policy . By providing your email address, you also consent to having the email address shared with third parties for those purposes. Sign Up Liam Price just cracked a 60-year-old problem that world-class mathematicians have tried and failed to solve.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">pr337h4m</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">66.1% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem/" class="read-link" style="color:#16a34a" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47903126" class="hn-link" style="color:#16a34a">Discussion HN (168)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-coral" style="background:#1a1a2e;color:#eee">
+  <div class="spread-inner">
+    <div class="numeral numeral-neon">09</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">thehistoryblog.com</span>
+        <span class="dot">·</span>
+        <span class="score">242 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">87 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">3j</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.thehistoryblog.com/archives/75877" target="_blank" rel="noopener" style="color:#eee">Iliad fragment found in Roman-era mummy</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">wise_blood</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">36.0% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.thehistoryblog.com/archives/75877" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47864056" class="hn-link" style="color:#ff6b6b">Discussion HN (87)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-paper" style="background:#f5f0e8;color:#2d2d2d">
+  <div class="spread-inner">
+    <div class="numeral numeral-roman">X</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">api-docs.deepseek.com</span>
+        <span class="dot">·</span>
+        <span class="score">2040 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">1554 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">2j</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://api-docs.deepseek.com/news/news260424" target="_blank" rel="noopener" style="color:#2d2d2d">DeepSeek v4</a>
+      </h2>
+      <p class="story-description">Skip to main content DeepSeek API Docs English English 中文（中国） DeepSeek Platform Quick Start Your First API Call Models & Pricing Token & Token Usage Rate Limit Error Codes API Guides Thinking Mode Multi-round Conversation Chat Prefix Completion (Beta) FIM Completion (Beta) JSON Output Tool Calls Context Caching Integrate with AI Tools Anthropic API API Reference News DeepSeek-V4 Preview Release 2026/04/24 DeepSeek-V3.2 Release 2025/12/01 DeepSeek-V3.2-Exp Release 2025/09/29 DeepSeek V3.1 Update 2025/09/22 DeepSeek V3.1 Release 2025/08/21 DeepSeek-R1-0528 Release 2025/05/28 DeepSeek-V3-0324 Release 2025/03/25 DeepSeek-R1 Release 2025/01/20 DeepSeek APP 2025/01/15 Introducing DeepSeek-V3 2024/12/26 DeepSeek-V2.5-1210 Release 2024/12/10 DeepSeek-R1-Lite Release 2024/11/20 DeepSeek-V2.5 Rel...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">impact_sy</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">76.2% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://api-docs.deepseek.com/news/news260424" class="read-link" style="color:#c0392b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47884971" class="hn-link" style="color:#c0392b">Discussion HN (1554)</a>
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+
+  <footer class="colophon">
+    <p>Morning Edition — curated daily by <a href="https://github.com/mmenestret">mmenestret</a></p>
+    <p style="margin-top:0.5rem;opacity:0.5">Generated 08:21 UTC+02:00</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
