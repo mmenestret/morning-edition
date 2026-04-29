@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morning Edition — mercredi 29 avril 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ff-display: 'Fraunces', serif;
+      --ff-body: 'Inter', sans-serif;
+      --ff-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); -webkit-font-smoothing: antialiased; }
+
+    .cover {
+      min-height: 100vh;
+      background: #0a0a0a;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,51,102,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 50%, rgba(56,189,248,0.06) 0%, transparent 50%);
+    }
+    .cover-kicker {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1.2vw, 1rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #ff3366;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .cover-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .cover-date {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-weight: 300;
+      color: #888;
+      position: relative;
+    }
+    .cover-subtitle {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      color: #666;
+      margin-top: 1rem;
+      position: relative;
+    }
+
+    .spread {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 6rem);
+      position: relative;
+    }
+    .spread-inner {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .numeral {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+    .numeral-giant {
+      font-size: clamp(6rem, 15vw, 14rem);
+      opacity: 0.15;
+      position: absolute;
+      top: clamp(1rem, 3vw, 3rem);
+      right: clamp(1rem, 3vw, 3rem);
+    }
+    .numeral-outline {
+      font-size: clamp(5rem, 12vw, 10rem);
+      -webkit-text-stroke: 2px;
+      color: transparent;
+    }
+    .numeral-stamp { font-size: clamp(3rem, 8vw, 6rem); }
+    .stamp-box {
+      border: 4px solid currentColor;
+      padding: 0.2em 0.4em;
+      letter-spacing: 0.1em;
+    }
+    .numeral-prompt {
+      font-family: var(--ff-mono);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+    }
+    .numeral-dropcap {
+      font-family: var(--ff-display);
+      font-size: clamp(6rem, 15vw, 12rem);
+      font-weight: 900;
+      font-style: italic;
+      float: left;
+      line-height: 0.75;
+      margin-right: 1.5rem;
+      margin-top: 0.3rem;
+    }
+    .numeral-bigstat { font-size: clamp(4rem, 10vw, 8rem); font-weight: 900; }
+    .stat-slash { font-weight: 300; opacity: 0.3; margin: 0 0.1em; }
+    .numeral-serif {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-style: italic;
+      font-weight: 300;
+    }
+    .numeral-circle {
+      width: clamp(4rem, 8vw, 7rem);
+      height: clamp(4rem, 8vw, 7rem);
+      border: 3px solid currentColor;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+    }
+    .numeral-neon {
+      font-family: var(--ff-mono);
+      font-size: clamp(4rem, 10vw, 8rem);
+      text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    }
+    .numeral-roman {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 200;
+      letter-spacing: 0.15em;
+    }
+
+    .story-meta {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1.2vw, 1rem);
+      opacity: 0.6;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      align-items: center;
+    }
+    .dot { opacity: 0.3; }
+    .story-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+    .story-title a {
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .story-title a:hover { opacity: 0.7; }
+    .story-description {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      line-height: 1.7;
+      opacity: 0.75;
+      max-width: 750px;
+      margin-bottom: 2rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+    .story-footer {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+    }
+    .hn-link, .read-link {
+      font-family: var(--ff-mono);
+      text-decoration: none;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .hn-link:hover, .read-link:hover { opacity: 0.7; }
+    .by { opacity: 0.4; }
+
+    .story-context {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-left: 3px solid currentColor;
+      opacity: 0.5;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+    }
+    .context-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      align-items: center;
+    }
+    .context-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85em; }
+    .context-value { font-weight: 700; }
+    .context-sep { opacity: 0.3; }
+    .engagement-high { color: #22c55e; }
+    .engagement-medium { color: #eab308; }
+    .engagement-rising { color: #3b82f6; }
+
+    .colophon {
+      min-height: 50vh;
+      background: #0a0a0a;
+      color: #666;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+    }
+    .colophon a { color: #ff3366; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .numeral-dropcap { float: none; margin-right: 0; margin-bottom: 1rem; }
+      .story-footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+    }
+
+    /* ── Section Headers ── */
+    .section-header {
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .section-header-inner { max-width: 800px; }
+    .section-kicker {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.9rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    /* ── Daily Panels ── */
+    .daily-panels {
+      padding: clamp(2rem, 5vw, 6rem);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .panel {
+      margin-bottom: 4rem;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(128,128,128,0.2);
+    }
+    .panel-icon {
+      font-size: 1.5rem;
+    }
+    .panel-label {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .panel-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      padding: 0.2em 0.6em;
+      border-radius: 3px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .tag-pro { background: #1e3a5f; color: #7dd3fc; }
+    .tag-perso { background: #3b1f3b; color: #f0abfc; }
+
+    .event-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: start;
+    }
+    .event-time {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      font-weight: 700;
+      opacity: 0.8;
+    }
+    .event-title {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .event-meta {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+      opacity: 0.5;
+    }
+    .event-note {
+      font-family: var(--ff-body);
+      font-size: clamp(0.8rem, 1vw, 0.95rem);
+      opacity: 0.6;
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    .email-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .email-from {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .email-subject {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .email-waiting {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+      white-space: nowrap;
+    }
+
+    .todo-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .todo-priority {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15em 0.5em;
+      border-radius: 3px;
+    }
+    .prio-p1 { background: #dc2626; color: #fff; }
+    .prio-p2 { background: #f59e0b; color: #000; }
+    .prio-p3 { background: #6b7280; color: #fff; }
+    .todo-content {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+    .todo-due {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    .empty-panel {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      opacity: 0.4;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+
+    /* ── Claude Code updates ── */
+    .external-updates {
+      background: #111827;
+      color: #f9fafb;
+      padding: clamp(2rem, 5vw, 5rem);
+    }
+    .external-updates-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .update-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .update-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      min-height: 100%;
+    }
+    .update-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #93c5fd;
+    }
+    .update-card-date {
+      color: rgba(255,255,255,0.55);
+      letter-spacing: normal;
+      text-transform: none;
+      font-size: 0.8rem;
+    }
+    .update-card-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.3rem, 2vw, 1.9rem);
+      line-height: 1.15;
+      color: #fff;
+    }
+    .update-card-details {
+      font-family: var(--ff-body);
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.76);
+      flex: 1;
+    }
+    .update-card-link {
+      font-family: var(--ff-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fda4af;
+      text-decoration: none;
+    }
+
+    /* ── Collisions ── */
+    .collisions {
+      background: #450a0a;
+      color: #fca5a5;
+      padding: clamp(2rem, 4vw, 4rem);
+    }
+    .collisions-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .collisions-header {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fecaca;
+      margin-bottom: 1.5rem;
+    }
+    .collision-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(252,165,165,0.15);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+    }
+    .collision-time {
+      font-family: var(--ff-mono);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    }
+    .collision-detail {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+
+    /* ── Tabs ── */
+    .tab-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: #666;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1.1vw, 1rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { color: #aaa; }
+    .tab-btn.active { color: #fff; border-bottom-color: #ff3366; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+  </style>
+</head>
+<body>
+  <header class="cover">
+    <div class="cover-kicker">Morning Edition</div>
+    <h1 class="cover-title">Ma<br>Journée</h1>
+    <div class="cover-date">mercredi 29 avril 2026</div>
+    <div class="cover-subtitle">Daily brief + 10 stories curated for mmenestret</div>
+  </header>
+
+
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="journee">Journée</button>
+    <button class="tab-btn" data-tab="veille">Veille</button>
+  </nav>
+
+  <div id="tab-journee" class="tab-panel active">
+<section class="collisions">
+  <div class="collisions-inner">
+    <div class="collisions-header">⚠️ Conflits de planning</div>
+    <div class="collision-item">
+      <div class="collision-time">10:30–11:30</div>
+      <div class="collision-detail"><strong>Pro :</strong> Kickoff Data Portal<br><strong>Perso :</strong> Piscine Ju</div>
+    </div>
+    <div class="collision-item">
+      <div class="collision-time">15:30–16:30</div>
+      <div class="collision-detail"><strong>Pro :</strong> Data x IA > Objectifs : Claude.md, Skills DBT/BigQuery/PR Review<br><strong>Perso :</strong> Kiné Aurélie</div>
+    </div>
+    <div class="collision-item">
+      <div class="collision-time">15:30–16:30</div>
+      <div class="collision-detail"><strong>Pro :</strong> Ateliers Règles de Gestions<br><strong>Perso :</strong> Kiné Aurélie</div>
+    </div>
+  </div>
+</section>
+<section class="daily-panels">
+<div class="panel">
+  <div class="panel-header">    <span class="panel-icon">💼</span>    <span class="panel-label">Journée Pro</span>    <span class="panel-tag tag-pro">Actual Group</span>  </div>
+  <div class="event-row">
+    <div class="event-time">09:00–09:30</div>
+    <div>
+      <div class="event-title">Daily data</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">10:30–11:30</div>
+    <div>
+      <div class="event-title">Kickoff Data Portal</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">14:00–17:00</div>
+    <div>
+      <div class="event-title">Data x IA > Objectifs : Claude.md, Skills DBT/BigQuery/PR Review</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">14:00–17:00</div>
+    <div>
+      <div class="event-title">Ateliers Règles de Gestions</div>
+      <div class="event-note">Paris, France</div>
+    </div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">📬</span>    <span class="panel-label">Mails en attente</span>  </div>
+  <div class="email-row">
+    <div class="email-from">Julien Diennet via Notion</div>
+    <div class="email-subject">AI for Data Team — mise à jour de carte demandée</div>
+    <div class="email-waiting">5j</div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">🔥</span>    <span class="panel-label">Priorités</span>  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p2">P2</div>
+    <div class="todo-content">Finir d’implémenter le modele de ventillation des variables de Sylvai</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">NextPay : Mise à jour des objets IN/OUT dans le diagramme de flux</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Setup accès Claude Actual</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Recaler la BAF sur le cadrage de Sylvain</div>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-header">    <span class="panel-icon">🏠</span>    <span class="panel-label">Journée Perso</span>    <span class="panel-tag tag-perso">Famille</span>  </div>
+  <div class="event-row">
+    <div class="event-time">10:30–11:30</div>
+    <div>
+      <div class="event-title">Piscine Ju</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">08:00–09:00</div>
+    <div>
+      <div class="event-title">Kiné</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">12:30–13:30</div>
+    <div>
+      <div class="event-title">Darioritum Crossfit - 2026-04-29 12:30</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">15:30–16:30</div>
+    <div>
+      <div class="event-title">Kiné Aurélie</div>
+    </div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">📬</span>    <span class="panel-label">Mails perso en attente</span>  </div>
+  <div class="email-row">
+    <div class="email-from">Votre Assurance Maladie <assurance-maladie@info.ameli.fr></div>
+    <div class="email-subject">Information de paiement</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Strava <mail@update.strava.com></div>
+    <div class="email-subject">Gwendal P vous a envoyé un kudos !</div>
+    <div class="email-waiting">1j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Analytics Engineering Roundup <analyticsengineeringroundup@substack.com></div>
+    <div class="email-subject">A Dispatch from the Jagged Frontier of Analytics Engineering</div>
+    <div class="email-waiting">2j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Planity SAS <receipts+acct_17CtV2A69XfgDO9E@stripe.com></div>
+    <div class="email-subject">Votre reçu de Planity SAS [n° 1287-6160-4078]</div>
+    <div class="email-waiting">3j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">ChouetteCopro <notifications@chouette.immo></div>
+    <div class="email-subject">[Actiim]  - Du Vendredi 17 Avr. au Vendredi 24 Avr. : 3 signalements et 3 mises à jour</div>
+    <div class="email-waiting">4j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">FRANCE JUDO <communication@ffjudo.com></div>
+    <div class="email-subject">TATAMI! #8 - Ta dose mensuelle de Judo</div>
+    <div class="email-waiting">4j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Julien Hurault <juhache@substack.com></div>
+    <div class="email-subject">I Let Claude Code Build ELT Connectors. Here’s What Happened.</div>
+    <div class="email-waiting">6j</div>
+  </div>
+</div>
+</section>
+
+  </div>
+
+  <div id="tab-veille" class="tab-panel">
+
+    <section class="section-header" style="background:#0a0a0a;color:#fff">
+      <div class="section-header-inner">
+        <div class="section-kicker">Veille</div>
+        <h2 class="section-title">Hacker News</h2>
+      </div>
+    </section>
+
+<section class="spread spread-hero" style="background:#0a0a0a;color:#ffffff">
+  <div class="spread-inner">
+    <div class="numeral numeral-giant">01</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">stratechery.com</span>
+        <span class="dot">·</span>
+        <span class="score">225 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">78 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">10h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://stratechery.com/2026/an-interview-with-openai-ceo-sam-altman-and-aws-ceo-matt-garman-about-bedrock-managed-agents/" target="_blank" rel="noopener" style="color:#ffffff">OpenAI models coming to Amazon Bedrock: Interview with OpenAI and AWS CEOs</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">translocator</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">34.7% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://stratechery.com/2026/an-interview-with-openai-ceo-sam-altman-and-aws-ceo-matt-garman-about-bedrock-managed-agents/" class="read-link" style="color:#ff3366" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47939320" class="hn-link" style="color:#ff3366">Discussion HN (78)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-midnight" style="background:#0f172a;color:#e2e8f0">
+  <div class="spread-inner">
+    <div class="numeral numeral-outline" style="color:transparent;-webkit-text-stroke:2px #38bdf8">02</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">github.com</span>
+        <span class="dot">·</span>
+        <span class="score">188 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">82 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">6h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://github.com/anthropics/claude-code/issues/49363" target="_blank" rel="noopener" style="color:#e2e8f0">Regression: malware reminder on every read still causes subagent refusals</a>
+      </h2>
+      <p class="story-description">Regression summary Issue #47027 was closed by @bcherny in February saying "This was fixed in v2.1.92." I'm running v2.1.111 (19 versions past the fix) and the exact same behavior reproduces reliabl...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">thomashobohm</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">43.6% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://github.com/anthropics/claude-code/issues/49363" class="read-link" style="color:#38bdf8" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47942492" class="hn-link" style="color:#38bdf8">Discussion HN (82)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-rose" style="background:#fff1f2;color:#1c1917">
+  <div class="spread-inner">
+    <div class="numeral numeral-stamp"><span class="stamp-box">03</span></div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">chrisnager.com</span>
+        <span class="dot">·</span>
+        <span class="score">82 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">31 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">11h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://chrisnager.com/blog/doom-runs-in-chatgpt-and-claude/" target="_blank" rel="noopener" style="color:#1c1917">A playable DOOM MCP app</a>
+      </h2>
+      <p class="story-description">"C" logo of Chris Nager (Press to go home) Home Profile Projects Speaking Blog DOOM runs in ChatGPT and Claude Apr 17, 2026 AI Game development Creation MCP I made a playable DOOM MCP app that can launch inline inside compatible AI clients like ChatGPT and Claude, and falls back to a browser URL everywhere else. DOOM running on Claude web MCP apps are "interactive UI applications that render inside MCP hosts like Claude Desktop." The final version is intentionally lean: one MCP tool to create a DOOM session inline one MCP tool to return a plain launch URL one browser route at /doom/play one signed-token flow that works in both places There’s something delightful about taking a protocol designed for tools and structured interactions, and asking: “ can it run DOOM? ” DOOM running on Claud...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">chrisnager</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-medium">medium</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">37.8% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://chrisnager.com/blog/doom-runs-in-chatgpt-and-claude/" class="read-link" style="color:#e11d48" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47939079" class="hn-link" style="color:#e11d48">Discussion HN (31)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-terminal" style="background:#0d1117;color:#c9d1d9">
+  <div class="spread-inner">
+    <div class="numeral numeral-prompt"><span class="prompt-symbol">$</span> #04</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">legallayer.substack.com</span>
+        <span class="dot">·</span>
+        <span class="score">334 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">337 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">18h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://legallayer.substack.com/p/who-owns-the-claude-code-wrote" target="_blank" rel="noopener" style="color:#c9d1d9">Who owns the code Claude Code wrote?</a>
+      </h2>
+      <p class="story-description">Sena Evren Apr 28, 2026 15 2 6 Share TL; DR Agentic coding tools like Claude Code, Cursor, and Codex generate code that may be uncopyrightable, owned by your employer, or contaminated by open source licenses you cannot see. Some of this is settled law, some is actively contested, and this piece is clear about which is which. If you are shipping AI-assisted code and have not thought about any of this, this piece is for you. Legal Layer Angle: In this piece I will talk about what a developer using AI coding tools needs to document to own what they build, what their employment contract probably says about AI-assisted work product, and what the practical implication is for open source contributions written with AI assistance. The question of who legally owns that code is less settled than m...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">senaevren</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">100.9% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://legallayer.substack.com/p/who-owns-the-claude-code-wrote" class="read-link" style="color:#58a6ff" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47932937" class="hn-link" style="color:#58a6ff">Discussion HN (337)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-academic" style="background:#faf9f6;color:#1a1a1a">
+  <div class="spread-inner">
+    <div class="numeral numeral-dropcap">E</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">status.claude.com</span>
+        <span class="dot">·</span>
+        <span class="score">282 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">240 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">12h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://status.claude.com/incidents/9l93x2ht4s5w" target="_blank" rel="noopener" style="color:#1a1a1a">Claude.ai unavailable and elevated errors on the API</a>
+      </h2>
+      <p class="story-description">Claude.ai unavailable and elevated errors on the API Incident Report for Claude Resolved This incident has been resolved. Posted Apr 28 , 2026 - 19:15 UTC Monitoring We are seeing success rates across all services return to normal, and are monitoring closely to prevent any further issues. Posted Apr 28 , 2026 - 18:59 UTC Update We are continuing to work to resolve the issues preventing users from accessing Claude.ai, and causing elevated authentication errors for requests to the API and Claude Code. Posted Apr 28 , 2026 - 18:33 UTC Identified We have identified an issue resulting in elevated errors on the Anthropic API, as well as issues accessing Claude.ai, including log-in paths for Claude Code. We are working to resolve these issues, and will provide an update as soon as possible.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">shorsher</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">85.1% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://status.claude.com/incidents/9l93x2ht4s5w" class="read-link" style="color:#7c3aed" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47938097" class="hn-link" style="color:#7c3aed">Discussion HN (240)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-stat" style="background:#18181b;color:#fafafa">
+  <div class="spread-inner">
+    <div class="numeral numeral-bigstat">06<span class="stat-slash">/</span>10</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">vibebench.standardagents.ai</span>
+        <span class="dot">·</span>
+        <span class="score">10 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">3 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">6h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://vibebench.standardagents.ai/" target="_blank" rel="noopener" style="color:#fafafa">VibeBench: Measuring 1k Engineers' Opinions of New Models</a>
+      </h2>
+      <p class="story-description">A manifesto and membership registry for experienced engineers building the coding benchmark that actually matters.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">jpschroeder</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-rising">rising</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">30.0% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://vibebench.standardagents.ai/" class="read-link" style="color:#22d3ee" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47942306" class="hn-link" style="color:#22d3ee">Discussion HN (3)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-warm" style="background:#fef3c7;color:#292524">
+  <div class="spread-inner">
+    <div class="numeral numeral-serif">07</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">anthropic.com</span>
+        <span class="dot">·</span>
+        <span class="score">102 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">67 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">6h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.anthropic.com/news/claude-for-creative-work" target="_blank" rel="noopener" style="color:#292524">Claude for Creative Work</a>
+      </h2>
+      <p class="story-description">Skip to main content Skip to footer Research Economic Futures Commitments Learn News Try Claude Announcements Claude for Creative Work Apr 28, 2026 Creative professionals look to technology to expand what&#x27;s possible in their work. Claude can&#x27;t replace taste or imagination, but it can open up new ways of working—faster and more ambitious ideation, a more expansive skill set, and the ability for creatives to take on larger-scale projects. AI can also help shoulder the parts of the creative process that eat up time by handling repetitive tasks and eliminating manual toil. Key to both these goals is integrating Claude into the tools the creative industry already knows and trusts. Today, with a coalition of partners including Blender, Autodesk, Adobe, Ableton, and Splice, we’re rel...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">elsewhen</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">65.7% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.anthropic.com/news/claude-for-creative-work" class="read-link" style="color:#d97706" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47942386" class="hn-link" style="color:#d97706">Discussion HN (67)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-mint" style="background:#f0fdf4;color:#14532d">
+  <div class="spread-inner">
+    <div class="numeral numeral-circle"><span>08</span></div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">nymag.com</span>
+        <span class="dot">·</span>
+        <span class="score">15 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">0 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">1h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://nymag.com/intelligencer/article/after-layoffs-meta-is-training-ai-on-its-own-workers.html" target="_blank" rel="noopener" style="color:#14532d">The Downgrading of the American Tech Worker</a>
+      </h2>
+      <p class="story-description">Meta is laying off more workers — and monitoring the ones who are left in order to train AI to maybe replace them.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">sizzle</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-rising">rising</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://nymag.com/intelligencer/article/after-layoffs-meta-is-training-ai-on-its-own-workers.html" class="read-link" style="color:#16a34a" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47944328" class="hn-link" style="color:#16a34a">Discussion HN (0)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-coral" style="background:#1a1a2e;color:#eee">
+  <div class="spread-inner">
+    <div class="numeral numeral-neon">09</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">github.blog</span>
+        <span class="dot">·</span>
+        <span class="score">349 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">224 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">20h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://github.blog/news-insights/company-news/an-update-on-github-availability/" target="_blank" rel="noopener" style="color:#eee">An update on GitHub availability</a>
+      </h2>
+      <p class="story-description">Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot See what&#039;s new AI & ML AI & ML Learn about artificial intelligence and machine learning across the GitHub ecosystem and the wider industry. How AI code generation works Explore the capabilities and benefits of AI code generation and how it can improve your developer experience. Learn more Developer skills Developer skills Resources for developers to grow in their skills and careers. Get started with GitHub documentation Learn how to start building, shipping, and maintaining software with GitHub. Learn more Engineering Engineering Get an inside look at how we’re building the home for all developers.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">salkahfi</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">64.2% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://github.blog/news-insights/company-news/an-update-on-github-availability/" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47932422" class="hn-link" style="color:#ff6b6b">Discussion HN (224)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-paper" style="background:#f5f0e8;color:#2d2d2d">
+  <div class="spread-inner">
+    <div class="numeral numeral-roman">X</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">theverge.com</span>
+        <span class="dot">·</span>
+        <span class="score">288 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">262 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">14h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal" target="_blank" rel="noopener" style="color:#2d2d2d">Google and Pentagon reportedly agree on deal for 'any lawful' use of AI</a>
+      </h2>
+      <p class="story-description">Google has signed a classified deal that allows the US Department of Defense to use its AI models for “any lawful government purpose,” The Information reports . The agreement was reported less than a day after Google employees demanded CEO Sundar Pichai block the Pentagon from using its AI amid concerns that it would be used in “inhumane or extremely harmful ways.”</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">granzymes</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">91.0% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal" class="read-link" style="color:#c0392b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47936156" class="hn-link" style="color:#c0392b">Discussion HN (262)</a>
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+
+  <footer class="colophon">
+    <p>Morning Edition — curated daily by <a href="https://github.com/mmenestret">mmenestret</a></p>
+    <p style="margin-top:0.5rem;opacity:0.5">Generated 08:23 UTC+02:00</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
