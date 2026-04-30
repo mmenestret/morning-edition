@@ -1196,14 +1196,34 @@ def render_html(stories, date_str, descriptions=None, pro_data=None, perso_data=
     # ── Build panels ──
     panels_html = ""
     collisions_html = ""
+    has_daily_panels = bool(pro_data or perso_data)
 
-    if pro_data or perso_data:
+    if has_daily_panels:
         panels_html = render_daily_panels(pro_data, perso_data, date_str)
         collisions_html = render_collisions(pro_data, perso_data)
 
     claude_updates_html = render_claude_code_updates(claude_updates)
 
-    cover_subtitle = "Daily brief + 10 stories curated for mmenestret" if (pro_data or perso_data) else "10 stories curated for mmenestret"
+    cover_subtitle = "Daily brief + 10 stories curated for mmenestret" if has_daily_panels else "10 stories curated for mmenestret"
+    cover_title = "Ma<br>Journée" if has_daily_panels else "Hacker<br>News"
+
+    if has_daily_panels:
+        tab_nav_html = """
+  <nav class=\"tab-bar\">
+    <button class=\"tab-btn active\" data-tab=\"journee\">Journée</button>
+    <button class=\"tab-btn\" data-tab=\"veille\">Veille</button>
+  </nav>
+
+  <div id=\"tab-journee\" class=\"tab-panel active\">
+""" + collisions_html + panels_html + """
+  </div>
+
+  <div id=\"tab-veille\" class=\"tab-panel\">
+"""
+    else:
+        tab_nav_html = """
+  <div id=\"tab-veille\" class=\"tab-panel active\">
+"""
 
     return """<!DOCTYPE html>
 <html lang="fr">
@@ -1221,22 +1241,12 @@ def render_html(stories, date_str, descriptions=None, pro_data=None, perso_data=
 <body>
   <header class="cover">
     <div class="cover-kicker">Morning Edition</div>
-    <h1 class="cover-title">""" + ("Ma<br>Journée" if (pro_data or perso_data) else "Hacker<br>News") + """</h1>
+    <h1 class="cover-title">""" + cover_title + """</h1>
     <div class="cover-date">""" + date_str + """</div>
     <div class="cover-subtitle">""" + cover_subtitle + """</div>
   </header>
 
-  <nav class="tab-bar">
-    <button class="tab-btn active" data-tab="journee">Journée</button>
-    <button class="tab-btn" data-tab="veille">Veille</button>
-  </nav>
-
-  <div id="tab-journee" class="tab-panel active">
-""" + collisions_html + panels_html + """
-  </div>
-
-  <div id="tab-veille" class="tab-panel">
-""" + claude_updates_html + """
+""" + tab_nav_html + claude_updates_html + """
     <section class="section-header" style="background:#0a0a0a;color:#fff">
       <div class="section-header-inner">
         <div class="section-kicker">Veille</div>
@@ -1270,6 +1280,7 @@ def main():
     parser = argparse.ArgumentParser(description="Morning Edition generator")
     parser.add_argument("--pro-json", help="Path to pro data JSON")
     parser.add_argument("--perso-json", help="Path to perso data JSON")
+    parser.add_argument("--no-publish", action="store_true", help="Generate the HTML file locally without committing/pushing to GitHub Pages")
     args = parser.parse_args()
 
     now = datetime.now(PARIS_TZ)
@@ -1333,20 +1344,23 @@ def main():
     out_path.write_text(html, encoding="utf-8")
     print("  Written to " + str(out_path))
 
-    # Push
-    print("  Pushing to GitHub...")
-    os.chdir(REPO_DIR)
-    subprocess.run(["git", "add", "magazines/"], check=True)
-    result = subprocess.run(["git", "diff", "--cached", "--quiet"], capture_output=True)
-    if result.returncode == 0:
-        print("  No changes to commit")
+    if args.no_publish:
+        print("  Publication disabled (--no-publish); leaving HTML local only")
     else:
-        subprocess.run(["git", "commit", "-m", "📰 " + date_str], check=True)
-        push = subprocess.run(["git", "push", "origin", "main"], capture_output=True, text=True)
-        if push.returncode != 0:
-            print("  ERROR: push failed: " + push.stderr, file=sys.stderr)
-            sys.exit(1)
-        print("  Pushed!")
+        # Push
+        print("  Pushing to GitHub...")
+        os.chdir(REPO_DIR)
+        subprocess.run(["git", "add", "magazines/"], check=True)
+        result = subprocess.run(["git", "diff", "--cached", "--quiet"], capture_output=True)
+        if result.returncode == 0:
+            print("  No changes to commit")
+        else:
+            subprocess.run(["git", "commit", "-m", "📰 " + date_str], check=True)
+            push = subprocess.run(["git", "push", "origin", "main"], capture_output=True, text=True)
+            if push.returncode != 0:
+                print("  ERROR: push failed: " + push.stderr, file=sys.stderr)
+                sys.exit(1)
+            print("  Pushed!")
 
     if new_claude_updates:
         save_seen_urls(
@@ -1355,9 +1369,13 @@ def main():
         )
         print("  Recorded " + str(len(new_claude_updates)) + " Claude Code update(s) as presented")
 
-    page_url = "https://geekocephale.com/morning-edition/magazines/" + date_str + ".html"
-    print("")
-    print("PUBLISH_URL=" + page_url)
+    if args.no_publish:
+        print("")
+        print("OUTPUT_PATH=" + str(out_path))
+    else:
+        page_url = "https://geekocephale.com/morning-edition/magazines/" + date_str + ".html"
+        print("")
+        print("PUBLISH_URL=" + page_url)
 
 
 if __name__ == "__main__":
