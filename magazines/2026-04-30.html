@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morning Edition — jeudi 30 avril 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ff-display: 'Fraunces', serif;
+      --ff-body: 'Inter', sans-serif;
+      --ff-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); -webkit-font-smoothing: antialiased; }
+
+    .cover {
+      min-height: 100vh;
+      background: #0a0a0a;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,51,102,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 50%, rgba(56,189,248,0.06) 0%, transparent 50%);
+    }
+    .cover-kicker {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1.2vw, 1rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #ff3366;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .cover-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .cover-date {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-weight: 300;
+      color: #888;
+      position: relative;
+    }
+    .cover-subtitle {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      color: #666;
+      margin-top: 1rem;
+      position: relative;
+    }
+
+    .spread {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 6rem);
+      position: relative;
+    }
+    .spread-inner {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .numeral {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+    .numeral-giant {
+      font-size: clamp(6rem, 15vw, 14rem);
+      opacity: 0.15;
+      position: absolute;
+      top: clamp(1rem, 3vw, 3rem);
+      right: clamp(1rem, 3vw, 3rem);
+    }
+    .numeral-outline {
+      font-size: clamp(5rem, 12vw, 10rem);
+      -webkit-text-stroke: 2px;
+      color: transparent;
+    }
+    .numeral-stamp { font-size: clamp(3rem, 8vw, 6rem); }
+    .stamp-box {
+      border: 4px solid currentColor;
+      padding: 0.2em 0.4em;
+      letter-spacing: 0.1em;
+    }
+    .numeral-prompt {
+      font-family: var(--ff-mono);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+    }
+    .numeral-dropcap {
+      font-family: var(--ff-display);
+      font-size: clamp(6rem, 15vw, 12rem);
+      font-weight: 900;
+      font-style: italic;
+      float: left;
+      line-height: 0.75;
+      margin-right: 1.5rem;
+      margin-top: 0.3rem;
+    }
+    .numeral-bigstat { font-size: clamp(4rem, 10vw, 8rem); font-weight: 900; }
+    .stat-slash { font-weight: 300; opacity: 0.3; margin: 0 0.1em; }
+    .numeral-serif {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-style: italic;
+      font-weight: 300;
+    }
+    .numeral-circle {
+      width: clamp(4rem, 8vw, 7rem);
+      height: clamp(4rem, 8vw, 7rem);
+      border: 3px solid currentColor;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+    }
+    .numeral-neon {
+      font-family: var(--ff-mono);
+      font-size: clamp(4rem, 10vw, 8rem);
+      text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    }
+    .numeral-roman {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 200;
+      letter-spacing: 0.15em;
+    }
+
+    .story-meta {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1.2vw, 1rem);
+      opacity: 0.6;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      align-items: center;
+    }
+    .dot { opacity: 0.3; }
+    .story-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+    .story-title a {
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .story-title a:hover { opacity: 0.7; }
+    .story-description {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      line-height: 1.7;
+      opacity: 0.75;
+      max-width: 750px;
+      margin-bottom: 2rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+    .story-footer {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+    }
+    .hn-link, .read-link {
+      font-family: var(--ff-mono);
+      text-decoration: none;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .hn-link:hover, .read-link:hover { opacity: 0.7; }
+    .by { opacity: 0.4; }
+
+    .story-context {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-left: 3px solid currentColor;
+      opacity: 0.5;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+    }
+    .context-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      align-items: center;
+    }
+    .context-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85em; }
+    .context-value { font-weight: 700; }
+    .context-sep { opacity: 0.3; }
+    .engagement-high { color: #22c55e; }
+    .engagement-medium { color: #eab308; }
+    .engagement-rising { color: #3b82f6; }
+
+    .colophon {
+      min-height: 50vh;
+      background: #0a0a0a;
+      color: #666;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+    }
+    .colophon a { color: #ff3366; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .numeral-dropcap { float: none; margin-right: 0; margin-bottom: 1rem; }
+      .story-footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+    }
+
+    /* ── Section Headers ── */
+    .section-header {
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .section-header-inner { max-width: 800px; }
+    .section-kicker {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.9rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    /* ── Daily Panels ── */
+    .daily-panels {
+      padding: clamp(2rem, 5vw, 6rem);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .panel {
+      margin-bottom: 4rem;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(128,128,128,0.2);
+    }
+    .panel-icon {
+      font-size: 1.5rem;
+    }
+    .panel-label {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .panel-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      padding: 0.2em 0.6em;
+      border-radius: 3px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .tag-pro { background: #1e3a5f; color: #7dd3fc; }
+    .tag-perso { background: #3b1f3b; color: #f0abfc; }
+
+    .event-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: start;
+    }
+    .event-time {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      font-weight: 700;
+      opacity: 0.8;
+    }
+    .event-title {
+      font-family: var(--ff-body);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .event-meta {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+      opacity: 0.5;
+    }
+    .event-note {
+      font-family: var(--ff-body);
+      font-size: clamp(0.8rem, 1vw, 0.95rem);
+      opacity: 0.6;
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    .email-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .email-from {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .email-subject {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .email-waiting {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+      white-space: nowrap;
+    }
+
+    .todo-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(128,128,128,0.1);
+      align-items: center;
+    }
+    .todo-priority {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15em 0.5em;
+      border-radius: 3px;
+    }
+    .prio-p1 { background: #dc2626; color: #fff; }
+    .prio-p2 { background: #f59e0b; color: #000; }
+    .prio-p3 { background: #6b7280; color: #fff; }
+    .todo-content {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+    .todo-due {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    .empty-panel {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      opacity: 0.4;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+
+    /* ── Claude Code updates ── */
+    .external-updates {
+      background: #111827;
+      color: #f9fafb;
+      padding: clamp(2rem, 5vw, 5rem);
+    }
+    .external-updates-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .update-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .update-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      min-height: 100%;
+    }
+    .update-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #93c5fd;
+    }
+    .update-card-date {
+      color: rgba(255,255,255,0.55);
+      letter-spacing: normal;
+      text-transform: none;
+      font-size: 0.8rem;
+    }
+    .update-card-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.3rem, 2vw, 1.9rem);
+      line-height: 1.15;
+      color: #fff;
+    }
+    .update-card-details {
+      font-family: var(--ff-body);
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.76);
+      flex: 1;
+    }
+    .update-card-link {
+      font-family: var(--ff-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fda4af;
+      text-decoration: none;
+    }
+
+    /* ── Collisions ── */
+    .collisions {
+      background: #450a0a;
+      color: #fca5a5;
+      padding: clamp(2rem, 4vw, 4rem);
+    }
+    .collisions-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .collisions-header {
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fecaca;
+      margin-bottom: 1.5rem;
+    }
+    .collision-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(252,165,165,0.15);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+    }
+    .collision-time {
+      font-family: var(--ff-mono);
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    }
+    .collision-detail {
+      font-family: var(--ff-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+
+    /* ── Tabs ── */
+    .tab-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: #666;
+      font-family: var(--ff-mono);
+      font-size: clamp(0.8rem, 1.1vw, 1rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { color: #aaa; }
+    .tab-btn.active { color: #fff; border-bottom-color: #ff3366; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+  </style>
+</head>
+<body>
+  <header class="cover">
+    <div class="cover-kicker">Morning Edition</div>
+    <h1 class="cover-title">Ma<br>Journée</h1>
+    <div class="cover-date">jeudi 30 avril 2026</div>
+    <div class="cover-subtitle">Daily brief + 10 stories curated for mmenestret</div>
+  </header>
+
+
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="journee">Journée</button>
+    <button class="tab-btn" data-tab="veille">Veille</button>
+  </nav>
+
+  <div id="tab-journee" class="tab-panel active">
+<section class="daily-panels">
+<div class="panel">
+  <div class="panel-header">    <span class="panel-icon">💼</span>    <span class="panel-label">Journée Pro</span>    <span class="panel-tag tag-pro">Actual Group</span>  </div>
+  <div class="event-row">
+    <div class="event-time">09:00–09:30</div>
+    <div>
+      <div class="event-title">Daily data</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">11:00–11:30</div>
+    <div>
+      <div class="event-title">Echange Perf Box</div>
+    </div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">🔥</span>    <span class="panel-label">Priorités</span>  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Embasement engagement budgets BU 2026</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Recaler la BAF sur le cadrage de Sylvain</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Rapprochement des libellés compte comptable correction BAC</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Analyser si date ecriture = date facture dans la BAF</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">BAF - TODO</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Resortir les top clients BAF avec code activité</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Ajout identifiant récipiendaires dans les XML de virement</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Ouvrir les flux SFTP BT</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Clean BAP</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">NextPay : Mise à jour des objets IN/OUT dans le diagramme de flux</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Ajouter des documents sans rattachement boussole</div>
+  </div>
+  <div class="todo-row">
+    <div class="todo-priority prio-p3">P3</div>
+    <div class="todo-content">Setup accès Claude Actual</div>
+  </div>
+</div>
+<div class="panel">
+  <div class="panel-header">    <span class="panel-icon">🏠</span>    <span class="panel-label">Journée Perso</span>    <span class="panel-tag tag-perso">Famille</span>  </div>
+  <div class="event-row">
+    <div class="event-time">18:00–19:15</div>
+    <div>
+      <div class="event-title">Hyrox Aurélie</div>
+    </div>
+  </div>
+  <div class="event-row">
+    <div class="event-time">19:30–22:00</div>
+    <div>
+      <div class="event-title">Anniversaire Amélie</div>
+    </div>
+  </div>
+  <div class="panel-header" style="margin-top:2rem">    <span class="panel-icon">📬</span>    <span class="panel-label">Mails perso en attente</span>  </div>
+  <div class="email-row">
+    <div class="email-from"><support@services.ovhcloud.com></div>
+    <div class="email-subject">[mm405628-ovh] [OVHcloud] Erreur sur l'opération ContactControlCorrect n° 589159970 du domaine lambdalogic.fr</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">OVHcloud <support@services.ovhcloud.com></div>
+    <div class="email-subject">[OVHcloud][Action requise] Important | Vérification du nom de domaine lambdalogic.fr [mm405628-ovh]</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">OVHcloud <support@services.ovhcloud.com></div>
+    <div class="email-subject">[OVHcloud] Action requise | Validation de votre e-mail pour le nom de domaine lambdalogic.fr</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Robin de DataGen <datageneration@substack.com></div>
+    <div class="email-subject">Back Market : Construire un Data Model robuste et scaler l'Analytics Engineering</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Mint Energie <ne-pas-repondre@conso.mint-energie.com></div>
+    <div class="email-subject">Votre consommation de la semaine dernière</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Hostinger <team@user.hostinger.com></div>
+    <div class="email-subject">  Action requise: L'espace disque de votre VPS est presque saturé</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">"Qonto.com" <support@qonto.com></div>
+    <div class="email-subject">Vous avez reçu 1 458,33 EUR</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">LCL <LCL@message.lcl.fr></div>
+    <div class="email-subject">Evolution tarifaire au 1er juillet 2026</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Kube <samuel@lakube.com></div>
+    <div class="email-subject">Révélation</div>
+    <div class="email-waiting">0j</div>
+  </div>
+  <div class="email-row">
+    <div class="email-from">Votre Assurance Maladie <assurance-maladie@info.ameli.fr></div>
+    <div class="email-subject">Déclarez en ligne vos soins réalisés à l'étranger</div>
+    <div class="email-waiting">0j</div>
+  </div>
+</div>
+</section>
+
+  </div>
+
+  <div id="tab-veille" class="tab-panel">
+
+    <section class="section-header" style="background:#0a0a0a;color:#fff">
+      <div class="section-header-inner">
+        <div class="section-kicker">Veille</div>
+        <h2 class="section-title">Hacker News</h2>
+      </div>
+    </section>
+
+<section class="spread spread-hero" style="background:#0a0a0a;color:#ffffff">
+  <div class="spread-inner">
+    <div class="numeral numeral-giant">01</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">maxtaylor.me</span>
+        <span class="dot">·</span>
+        <span class="score">84 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">60 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">9h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.maxtaylor.me/articles/i-benchmarked-caveman-against-two-words" target="_blank" rel="noopener" style="color:#ffffff">I benchmarked Claude Code's caveman plugin against "be brief."</a>
+      </h2>
+      <p class="story-description">max taylor Home Articles About I benchmarked caveman against two words Apr 29, 2026 · 5 min read Caveman, a popular Claude Code compression plugin, vs. The pitch is in the name: ultra-compressed responses, ~75% fewer tokens, all the technical accuracy. What I tested Category Failure mode Skill claim tested n Bug diagnosis Drops the why , gives fix without cause — 5 Concept explanation Strips nuance, edge cases, or compresses technical terms into plain English Technical terms exact 5 Architectural tradeoffs Drops caveats that change the advice — 4 Multi-step setup Collapses or reorders steps — 4 Security / destructive ops Missing warnings on irreversible actions Auto-Clarity escape 3 Error interpretation Paraphrases or truncates the error string Errors quoted exact 3 24 prompts across si...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">max-t-dev</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-medium">medium</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">71.4% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.maxtaylor.me/articles/i-benchmarked-caveman-against-two-words" class="read-link" style="color:#ff3366" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47954745" class="hn-link" style="color:#ff3366">Discussion HN (60)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-midnight" style="background:#0f172a;color:#e2e8f0">
+  <div class="spread-inner">
+    <div class="numeral numeral-outline" style="color:transparent;-webkit-text-stroke:2px #38bdf8">02</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">interfaze.ai</span>
+        <span class="dot">·</span>
+        <span class="score">50 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">21 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">14h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://interfaze.ai/blog/introducing-structured-output-benchmark" target="_blank" rel="noopener" style="color:#e2e8f0">Show HN: A new benchmark for testing LLMs for deterministic outputs</a>
+      </h2>
+      <p class="story-description">Interfaze Beta pricing docs blog sign in Introducing the Structured Output Benchmark (SOB) copy markdown LLMs are increasingly deployed to produce structured data from unstructured and semi-structured sources, parsing invoices, medical records, meeting transcripts, and converting PDFs to database rows. For deterministic output, the next step in a workflow reads a specific key and expects a specific type. A hallucinated invoice_total or an array ordered incorrectly because of inaccurate date values silently breaks downstream systems. Yet existing benchmarks either check schema compliance alone or evaluate value correctness within a single source domain. Top 5 at a glance A side-by-side look at the top 5 models across all seven metrics.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">khurdula</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-rising">rising</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">42.0% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://interfaze.ai/blog/introducing-structured-output-benchmark" class="read-link" style="color:#38bdf8" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47950283" class="hn-link" style="color:#38bdf8">Discussion HN (21)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-rose" style="background:#fff1f2;color:#1c1917">
+  <div class="spread-inner">
+    <div class="numeral numeral-stamp"><span class="stamp-box">03</span></div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">mistral.ai</span>
+        <span class="dot">·</span>
+        <span class="score">453 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">210 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">15h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5" target="_blank" rel="noopener" style="color:#1c1917">Mistral Medium 3.5</a>
+      </h2>
+      <p class="story-description">Products Solutions Research Blog Customers Company Contact Sales Try Studio Press enter or space to select a node. Introducing Mistral Medium 3.5, remote coding agents in Vibe, plus new Work mode in Le Chat for complex tasks. Today we&#x27;re moving them to the cloud, where they run on their own, in parallel, and notify you when they&#x27;re done. You can start them from the Mistral Vibe CLI or directly in Le Chat, offloading a coding task without leaving the conversation. Powering this is Mistral Medium 3.5 in public preview, our new default model in Mistral Vibe and Le Chat, built to run for long stretches on coding and productivity work.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">meetpateltech</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">46.4% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5" class="read-link" style="color:#e11d48" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47949642" class="hn-link" style="color:#e11d48">Discussion HN (210)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-terminal" style="background:#0d1117;color:#c9d1d9">
+  <div class="spread-inner">
+    <div class="numeral numeral-prompt"><span class="prompt-symbol">$</span> #04</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">blog.jeffschomay.com</span>
+        <span class="dot">·</span>
+        <span class="score">128 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">29 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">17h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://blog.jeffschomay.com/letting-ai-play-my-game" target="_blank" rel="noopener" style="color:#c9d1d9">Letting AI play my game – building an agentic test harness to help play-testing</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">jschomay</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">22.7% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://blog.jeffschomay.com/letting-ai-play-my-game" class="read-link" style="color:#58a6ff" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47947525" class="hn-link" style="color:#58a6ff">Discussion HN (29)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-academic" style="background:#faf9f6;color:#1a1a1a">
+  <div class="spread-inner">
+    <div class="numeral numeral-dropcap">E</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">openai.com</span>
+        <span class="dot">·</span>
+        <span class="score">355 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">162 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">3h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://openai.com/index/where-the-goblins-came-from/" target="_blank" rel="noopener" style="color:#1a1a1a">Where the goblins came from</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">ilreb</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">45.6% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://openai.com/index/where-the-goblins-came-from/" class="read-link" style="color:#7c3aed" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47957688" class="hn-link" style="color:#7c3aed">Discussion HN (162)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-stat" style="background:#18181b;color:#fafafa">
+  <div class="spread-inner">
+    <div class="numeral numeral-bigstat">06<span class="stat-slash">/</span>10</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">github.com</span>
+        <span class="dot">·</span>
+        <span class="score">1075 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">457 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">11h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://github.com/anthropics/claude-code/issues/53262" target="_blank" rel="noopener" style="color:#fafafa">HERMES.md in commit messages causes requests to route to extra usage billing</a>
+      </h2>
+      <p class="story-description">Summary When a git repository's recent commit history contains the case-sensitive string HERMES.md, Claude Code routes API requests to "extra usage" billing instead of the included Max plan quota. ...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">homebrewer</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">42.5% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://github.com/anthropics/claude-code/issues/53262" class="read-link" style="color:#22d3ee" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47952722" class="hn-link" style="color:#22d3ee">Discussion HN (457)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-warm" style="background:#fef3c7;color:#292524">
+  <div class="spread-inner">
+    <div class="numeral numeral-serif">07</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">status.claude.com</span>
+        <span class="dot">·</span>
+        <span class="score">112 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">107 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">5h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://status.claude.com/incidents/2gf1jpyty350" target="_blank" rel="noopener" style="color:#292524">Claude.ai and API unavailable [fixed]</a>
+      </h2>
+      <p class="story-description">claude.ai and API unavailable Incident Report for Claude Resolved This incident has been resolved. Posted Apr 30 , 2026 - 01:51 UTC Monitoring A fix has been implemented and we are monitoring the results. Posted Apr 30 , 2026 - 01:34 UTC Investigating We are currently investigating this issue. Posted Apr 30 , 2026 - 01:20 UTC This incident affected: claude.ai, Claude Console (platform.claude.com), Claude API (api.anthropic.com), Claude Code, Claude Cowork, and Claude for Government. &larr; Current Status Powered by Atlassian Statuspage × Subscribe to Incident Subscribe to updates for claude.ai and API unavailable via email and/or text message.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">rob</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">95.5% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://status.claude.com/incidents/2gf1jpyty350" class="read-link" style="color:#d97706" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47956895" class="hn-link" style="color:#d97706">Discussion HN (107)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-mint" style="background:#f0fdf4;color:#14532d">
+  <div class="spread-inner">
+    <div class="numeral numeral-circle"><span>08</span></div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">promptarmor.com</span>
+        <span class="dot">·</span>
+        <span class="score">126 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">39 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">12h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://www.promptarmor.com/resources/ramps-sheets-ai-exfiltrates-financials" target="_blank" rel="noopener" style="color:#14532d">Ramp's Sheets AI Exfiltrates Financials</a>
+      </h2>
+      <p class="story-description">Assess and monitor risk from AI in vendors with novel intelligence on emerging threats. Stay ahead of AI-driven third-party risk with continuous moitoring and adaptive insight.</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">takira</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">31.0% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://www.promptarmor.com/resources/ramps-sheets-ai-exfiltrates-financials" class="read-link" style="color:#16a34a" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47951786" class="hn-link" style="color:#16a34a">Discussion HN (39)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-coral" style="background:#1a1a2e;color:#eee">
+  <div class="spread-inner">
+    <div class="numeral numeral-neon">09</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">copy.fail</span>
+        <span class="dot">·</span>
+        <span class="score">816 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">315 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">12h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://copy.fail/" target="_blank" rel="noopener" style="color:#eee">Copy Fail</a>
+      </h2>
+      <p class="story-description">Copy Fail CVE-2026-31431 Exploit Mitigation FAQ Timeline Contact Copy Fail A dashed circle marks the intended landing site of the copy; a solid disk cascades down and to the right out of it in three progressively displaced bands — the copy missing its target. CVE-2026-31431 100% reliable every distro since 2017 container escape primitive 732 bytes found by Xint Code Copy Fail Most Linux LPEs need a race window or a kernel-specific offset. The same 732-byte Python script roots every Linux distribution shipped since 2017. One logic bug in authencesn , chained through AF_ALG and splice() into a 4-byte page-cache write — silently exploitable for nearly a decade. tmux — copy fail demo live --> poc(exp) | sha256: a567d09b15f6e4440e70c9f2aa8edec8ed59f53301952df05c719aa3911687f9 | first reveale...</p>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">unsnap_biceps</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">38.6% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://copy.fail/" class="read-link" style="color:#ff6b6b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47952181" class="hn-link" style="color:#ff6b6b">Discussion HN (315)</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="spread spread-paper" style="background:#f5f0e8;color:#2d2d2d">
+  <div class="spread-inner">
+    <div class="numeral numeral-roman">X</div>
+    <div class="story-content">
+      <div class="story-meta">
+        <span class="domain">neal.fun</span>
+        <span class="dot">·</span>
+        <span class="score">821 pts</span>
+        <span class="dot">·</span>
+        <span class="comments">135 comments</span>
+        <span class="dot">·</span>
+        <span class="ago">14h</span>
+      </div>
+      <h2 class="story-title">
+        <a href="https://neal.fun/cursor-camp/" target="_blank" rel="noopener" style="color:#2d2d2d">Cursor Camp</a>
+      </h2>
+      <div class="story-context">
+        <div class="context-row">
+          <span class="context-label">Par</span>
+          <span class="context-value">bpierre</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Engagement</span>
+          <span class="context-value engagement-high">high</span>
+          <span class="context-sep">·</span>
+          <span class="context-label">Ratio</span>
+          <span class="context-value">16.4% commentaires</span>
+        </div>
+      </div>
+      <div class="story-footer">
+        <a href="https://neal.fun/cursor-camp/" class="read-link" style="color:#c0392b" target="_blank">Lire l'article</a>
+        <a href="https://news.ycombinator.com/item?id=47949939" class="hn-link" style="color:#c0392b">Discussion HN (135)</a>
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+
+  <footer class="colophon">
+    <p>Morning Edition — curated daily by <a href="https://github.com/mmenestret">mmenestret</a></p>
+    <p style="margin-top:0.5rem;opacity:0.5">Generated 08:23 UTC+02:00</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
